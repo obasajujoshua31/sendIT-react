@@ -1,6 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-
+const webpack = require("webpack");
 module.exports = {
   entry: "./src/index.js",
 
@@ -24,9 +24,19 @@ module.exports = {
       }
     ]
   },
+  devServer: {
+    contentBase: path.join(__dirname, "/"),
+    port: 8080,
+    publicPath: "http://localhost:8080",
+    hotOnly: true,
+    historyApiFallback: true
+  },
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
     new HtmlWebpackPlugin({
-      template: "./src/index.html"
+      template: "src/index.html"
     })
   ]
 };
