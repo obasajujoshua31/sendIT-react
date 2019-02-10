@@ -3,4 +3,829 @@
 * {
   padding: 0;
   margin: 0;
+  line-height: 1.2;
+}
+body {
+  background-color: whitesmoke;
+  font-family: "Nixie One", cursive;
+}
+.container {
+  margin: auto;
+  width: 90%;
+  overflow: hidden;
+}
+.navbar-container {
+  display: flex;
+  // justify-content: space-between;
+}
+.navbar ul li {
+  display: inline-block;
+  padding: 10px;
+  list-style-type: none;
+}
+.navbar-container li i {
+  color: white;
+  font-size: 1.1em;
+  display: none;
+}
+.navbar-wrapper {
+  background-color: $primary;
+  border: 1px solid $primary;
+}
+.navbar ul li a {
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+  padding: 10px;
+  &:hover {
+    background-color: $secondary;
+    color: white;
+  }
+}
+.showcase {
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url(/src/assets/courier-service.jpg) no-repeat;
+  background-size: cover;
+  height: 600px;
+}
+footer {
+  background-color: $primary;
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 20px;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+}
+.navbar-brand {
+  color: $secondary;
+  font-weight: lighter;
+}
+.account-bar {
+  display: flex;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  width: 100%;
+}
+.account-bar ul li {
+  display: inline-block;
+  list-style-type: none;
+  padding: 8px;
+}
+
+.account-bar ul li a {
+  padding: 8px;
+  text-decoration: none;
+  color: $primary;
+
+  &:hover {
+    background-color: lightslategray;
+    color: white;
+  }
+}
+.service-information {
+  text-align: center;
+  width: 600px;
+  margin: auto;
+  color: white;
+  padding: 10px;
+  height: 195px;
+  // position: absolute;
+  top: 40%;
+  left: 50%;
+
+  h1 span {
+    padding: 5px;
+    color: $secondary;
+  }
+  p {
+    font-size: 1.3em;
+    padding: 10px;
+    line-height: 1.3;
+  }
+  button {
+    padding: 8px 20px;
+    color: white;
+    background-color: $primary;
+    font-size: 18px;
+    cursor: pointer;
+    position: relative;
+    margin: 1.5em auto;
+    outline: none;
+    border: none;
+    font-weight: lighter;
+
+    &:hover {
+      background-color: $secondary;
+      color: white;
+    }
+  }
+}
+.button {
+  padding: 3px 20px;
+  color: $primary;
+  background-color: inherit;
+  font-size: 16px;
+  cursor: pointer;
+  // margin: 1.5em auto;
+  outline: none;
+  border: none;
+  font-weight: lighter;
+  left: 40%;
+
+  &:hover {
+    background-color: $secondary;
+    color: white;
+  }
+}
+.edit {
+  background-color: $secondary;
+  color: white;
+
+  &:hover {
+    border: 1px solid $secondary;
+    background: inherit;
+    color: $primary;
+  }
+}
+.edit-direction {
+  position: relative;
+  margin: 15px auto;
+  background-color: $secondary;
+  padding: 6px 20px;
+  color: white;
+
+  &:hover {
+    border: 1px solid $secondary;
+    background: inherit;
+    color: $primary;
+  }
+}
+.cancel {
+  border: 1px solid $primary;
+}
+.service-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  .service-brand-name span {
+    color: $secondary;
+  }
+  .service-span {
+    padding: 10px;
+  }
+  .service-group {
+    display: flex;
+    padding: 1px;
+  }
+  .service-phone-content {
+    margin-right: 1.5rem;
+  }
+}
+.page-footer {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+
+  h1 {
+    font-weight: bolder;
+    a {
+      color: black;
+      text-decoration: none;
+      &:hover {
+        color: $secondary;
+      }
+    }
+  }
+}
+.about-us-body-heading {
+  background-color: white;
+}
+.about-us-body-heading h1 {
+  text-align: center;
+  padding: 10px;
+}
+.about-us-header {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(/src/assets/courier-services.jpg), no-repeat;
+  //   background-size: cover;
+  height: 300px;
+  color: white;
+  //   margin-bottom: 20px;
+  .about-us-header-content {
+    width: 800px;
+    // padding: 20px;
+    position: relative;
+    margin: auto;
+    padding-top: 100px;
+    text-align: center;
+    h1 {
+      padding: 10px;
+    }
+  }
+}
+.image-container {
+  height: 280px;
+  padding: 20px;
+  text-align: center;
+  background-color: white;
+  img {
+    height: 150px;
+  }
+}
+.bars-icon {
+  display: none;
+}
+.about-us-body {
+  display: flex;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+.about-us-body div {
+  //border: 1px solid rgba(0, 0, 0, 0.3);
+  width: 100%;
+  padding: 10px;
+  margin: 8px;
+}
+.user-information {
+  position: relative;
+  top: 16rem;
+  left: 12rem;
+}
+.account-wrapper {
+  height: calc(100vh - 105px);
+  // background-color: $secondary;
+
+  .create-wrapper {
+    height: 485px;
+  }
+  .form-wrapper {
+    position: relative;
+    top: 20%;
+    left: 30%;
+    width: 45%;
+    margin-left: -50px;
+    padding: 30px;
+    height: auto;
+    background-color: white;
+    box-sizing: border-box;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+
+    h2 {
+      padding-bottom: 10px;
+      font-weight: lighter;
+      text-align: center;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      padding: 6px;
+      select {
+        height: 35px;
+      }
+    }
+    .form-inline {
+      display: flex;
+      div {
+        width: 100%;
+      }
+    }
+    label {
+      font-weight: lighter;
+      font-size: 18px;
+      padding-bottom: 4px;
+    }
+    input {
+      padding: 10px 20px;
+      border-radius: 5px;
+      outline: none;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+
+      &::placeholder {
+        font-weight: lighter;
+        color: lightgray;
+        font-size: 14px;
+      }
+    }
+    input.error {
+      border-left: 5px solid red;
+    }
+    .errorMsg {
+      color: red;
+      font-size: 14px;
+    }
+    button {
+      padding: 10px 50px;
+      background-color: $primary;
+      color: white;
+      position: relative;
+      margin-top: 14px;
+      border-radius: 5px;
+      cursor: pointer;
+      // top: 20%;
+      &:hover {
+        background-color: $secondary;
+        color: white;
+      }
+    }
+  }
+  .create-wrapper {
+    min-height: 450px;
+    width: 50%;
+  }
+}
+
+aside {
+  top: 120px;
+  width: 20%;
+  position: fixed;
+  padding: 20px;
+  left: 0;
+  height: 100%;
+  box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.3);
+}
+aside nav ul li {
+  list-style-type: none;
+  padding: 20px 2px;
+}
+aside nav ul li a {
+  text-decoration: none;
+  padding: 10px;
+  color: lightslategray;
+  width: 100px;
+}
+aside nav ul li a:hover {
+  background-color: lightslategray;
+  color: white;
+}
+aside nav ul .active {
+  border-bottom: 1px solid burlywood;
+}
+
+.dashboard {
+  position: absolute;
+  left: 30%;
+  top: 15%;
+  height: 100%;
+  width: 80%;
+}
+.boxes div {
+  width: 200px;
+  height: 200px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.3);
+}
+.boxes {
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+}
+.box-group {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  border-bottom: 1px solid lightgray;
+  margin: auto;
+  margin-top: 3%;
+}
+.box {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+.content {
+  font-weight: bolder;
+  position: relative;
+  left: 10%;
+}
+.content-summary {
+  position: relative;
+  top: 30%;
+  right: 29%;
+  font-size: 3em;
+}
+.view-order-container {
+  /* background-color: white; */
+  // padding: 20px;
+  position: relative;
+  margin: auto;
+  width: 80%;
+  margin-top: 3%;
+  box-shadow: 0px 0px 7px 2px rgba(240, 231, 240, 1);
+  text-align: center;
+
+  h1 {
+    padding: 20px;
+    color: $primary;
+  }
+}
+.table {
+  border-collapse: collapse;
+  font-family: "Crimson Text", serif;
+  max-width: 100%;
+  margin: auto;
+  // border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.table thead {
+  border-bottom: 2px solid $primary;
+  border-top: 2px solid $primary;
+  font-weight: 600;
+  font-size: 20px;
+}
+.table td {
+  padding: 20px;
+}
+.table tr {
+  padding: 10px;
+  /* width: 600px; */
+}
+.table tr:nth-child(even) {
+  background-color: #e9e6e6;
+  font-weight: bold;
+}
+.table tbody tr {
+  cursor: pointer;
+}
+.table tbody tr:hover {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+.table {
+  color: $primary;
+}
+.table h1 {
+  text-align: center;
+}
+.Modal {
+  position: absolute;
+  top: 20%;
+  background-color: white;
+  height: 60%;
+  width: 500px;
+  left: 20%;
+  margin-right: auto;
+  border-radius: 30px;
+  outline-color: $primary;
+}
+.editModal {
+  position: absolute;
+  top: 30%;
+  background-color: white;
+  height: 20%;
+  width: 500px;
+  left: 60%;
+  margin-right: auto;
+  border-radius: 30px;
+  outline-color: $primary;
+}
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+}
+.item-label {
+  padding: 10px;
+  // color: white;
+  flex: 2;
+  color: $primary;
+}
+.item-span {
+  flex: 3;
+  align-items: flex-end;
+  padding: 10px;
+  justify-self: center;
+  color: $secondary;
+}
+@media (max-width: 1140px) {
+  .showcase {
+    width: 100%;
+    height: 578px;
+    background-size: cover;
+    // height: 100vh;
+  }
+  .page-footer {
+    height: 54px;
+    padding-top: 10px;
+  }
+  .about-us-header {
+    height: 320px;
+  }
+  .about-us-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .about-us-body div {
+    margin: 0px;
+  }
+  footer {
+    // position: relative;
+    bottom: 0;
+    height: 40px;
+  }
+  .user-information {
+    position: relative;
+    top: 14rem;
+    left: -2rem;
+  }
+}
+@media (max-width: 960px) {
+  .service-header {
+    justify-content: center;
+    h1 {
+      font-size: 16px;
+    }
+    .service-group {
+      display: none;
+    }
+  }
+  .account-wrapper .create-wrapper {
+    width: 75%;
+    margin-left: -107px;
+  }
+  .bars-icon {
+    display: none;
+  }
+  .service-information {
+    position: relative;
+    width: 90%;
+    left: 0;
+    margin: auto;
+    padding: 0;
+    top: 1rem;
+    p {
+      font-size: 16px;
+      // text-align: left;
+    }
+    h1 {
+      font-size: 16px;
+      span,
+      p {
+        font-size: 20px;
+      }
+    }
+  }
+  .container {
+    overflow: scroll;
+  }
+  // .navbar-container {
+  //   // li i {
+  //   //   display: block;
+  //   //   padding: 5px;
+  //   //   margin-top: -10px;
+  //   // }
+  //   // .navbar {
+  //   //   display: none;
+  //   // }
+  // }
+  footer {
+    // position: relative;
+    bottom: 0;
+    height: 20px;
+    p {
+      font-size: 16px;
+    }
+  }
+  .showcase {
+    height: 647px;
+    background-size: cover;
+  }
+  .user-information {
+    height: 300px;
+    width: 90%;
+    margin: 0;
+    padding-top: 20px;
+    position: relative;
+    top: 12rem;
+  }
+  .page-footer {
+    height: 30px;
+    h1 {
+      font-size: 25px;
+    }
+  }
+  .about-us-header .about-us-header-content {
+    width: 520px;
+  }
+}
+@media (max-width: 720px) {
+  .service-header {
+    h1 {
+      font-size: 16px;
+    }
+    // .service-group {
+    //   display:
+    // }
+  }
+  .bars-icon {
+    display: none;
+  }
+  // .navbar-container li {
+  //   // display: none;
+  // }
+  .service-header {
+    // height: 50px;
+    justify-content: center;
+  }
+  .service-information {
+    // position: relative;
+    width: 90%;
+    left: 0;
+    margin: auto;
+    padding: 0;
+    top: 1rem;
+    p {
+      font-size: 16px;
+      // text-align: left;
+    }
+    h1 {
+      font-size: 16px;
+      span,
+      p {
+        font-size: 20px;
+      }
+    }
+  }
+  .container {
+    overflow: scroll;
+  }
+
+  // li i {
+  //   display: block;
+  //   padding: 5px;
+  //   margin-top: -10px;
+  // }
+  // .navbar {
+  //   display: none;
+  // }
+
+  footer {
+    // position: relative;
+    bottom: 0;
+    height: 20px;
+    p {
+      font-size: 16px;
+    }
+  }
+  .showcase {
+    height: 654px;
+    background-size: cover;
+  }
+  .about-us-header {
+    height: 300px;
+  }
+
+  .user-information {
+    height: 300px;
+    width: 90%;
+    margin: 0;
+    padding-top: 20px;
+    position: relative;
+    top: 12rem;
+  }
+  .page-footer {
+    height: 30px;
+    h1 {
+      font-size: 25px;
+    }
+  }
+  .account-wrapper .sign-wrapper {
+    width: 65%;
+    margin-left: -98px;
+  }
+  .about-us-header .about-us-header-content {
+    width: 400px;
+  }
+}
+// @media(max-height:1366px){
+
+//   .showcase{
+//     height: 600px;
+//   }
+//   .navbar-wrapper{
+//     height: 50px;
+//   }
+//   footer{
+//     position: relative;
+//   }
+//   .service-information{
+//     position: relative;
+//     top: 15rem;
+//     left: 1rem;
+//   }
+//   .user-information{
+//     // height: 100vh;
+//   }
+
+@media (max-width: 622px) {
+  .service-header {
+    h1 {
+      font-size: 16px;
+    }
+    // .service-group {
+    //   display: none;
+    // }
+  }
+  .navbar-container ul {
+    display: none;
+  }
+  .bars-icon {
+    display: block;
+    padding: 10px;
+  }
+  .service-header {
+    // height: 50px;
+    justify-content: center;
+  }
+  .service-information {
+    // position: relative;
+    width: 90%;
+    left: 0;
+    margin: auto;
+    padding: 0;
+    top: 1rem;
+    p {
+      font-size: 16px;
+      // text-align: left;
+    }
+    h1 {
+      font-size: 16px;
+      span,
+      p {
+        font-size: 20px;
+      }
+    }
+  }
+  .about-us-body {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
+  .about-us-body .image-container {
+    grid-column: 1;
+  }
+  .about-us-body div {
+    padding: 5px;
+  }
+  .form-inline {
+    flex-direction: column;
+  }
+  .account-wrapper .create-wrapper {
+    width: 80%;
+    height: auto;
+    margin-left: -88px;
+  }
+  .container {
+    overflow: scroll;
+  }
+  .navbar-container {
+    li i {
+      display: block;
+      padding: 5px;
+      margin-top: -10px;
+    }
+    // .navbar {
+    //   display: none;
+    // }
+  }
+  footer {
+    // position: relative;
+    bottom: 0;
+    height: 20px;
+    p {
+      font-size: 16px;
+    }
+  }
+  .about-us-header .about-us-header-content {
+    width: 280px;
+    padding-top: 70px;
+  }
+  .showcase {
+    height: 654px;
+    background-size: cover;
+  }
+  .about-us-header {
+    height: 300px;
+  }
+  .user-information {
+    height: 300px;
+    width: 90%;
+    margin: 0;
+    padding-top: 20px;
+    position: relative;
+    top: 12rem;
+  }
+  .page-footer {
+    height: 30px;
+    h1 {
+      font-size: 25px;
+    }
+  }
 }
