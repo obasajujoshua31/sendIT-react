@@ -1,0 +1,17 @@
+export const signUpUser = "SIGN_UP_USER";
+export const signInUser = "SIGN_IN_USER";
+export const createOrder = "CREATE_ORDER";
+export const createOrderSuccess = "CREATE_ORDER_SUCCESS";
+export const createOrderFailure = "CREATE_ORDER_FAILURE";
+export const viewOrders = "VIEW_ORDERS";
+export const viewOrder = "VIEW_ORDER";
+export const updateParcel = "UPDATE_PARCELS";
+export const updateLocation = "UPDATE_PARCEL_LOCATION";
+export const cancelOrder = "CANCEL_ORDER";
+export const updateParcelStatus = "UPDATE_PARCEL_STATUS";
+export const signInSuccess = "SIGN_IN_SUCCESS";
+export const signInFailure = "SIGN_IN_FAILURE";
+export const signUpSuccess = "SIGN_UP_SUCCESS";
+export const signUpFailure = "SIGN_UP_FAILURE";
+export const isLoggedOut = "LOGGED_OUT";
+export const isAdmin = "IS_ADMIN";
