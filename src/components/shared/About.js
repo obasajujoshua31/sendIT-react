@@ -1,8 +1,8 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 const About = () => {
   return (
-    <React.Fragment>
+    <Fragment>
       <div className="about-us">
         <div className="about-us-header">
           <div className="about-us-header-content">
@@ -35,14 +35,17 @@ const About = () => {
             <h3>Vision</h3>
             <p>To be among the top leading Courier Services in Africa</p>
           </div>
-                  <div className="image-container image-3">
-                      <img src="/src/assets/rawpixel-783423-unsplash.jpg" />
-                      <h3>Mission</h3>
-                      <p>By Prompt Delivery of parcels to various destination with the satisfaction of customers in mind.</p>
-                  </div>
+          <div className="image-container image-3">
+            <img src="/src/assets/rawpixel-783423-unsplash.jpg" />
+            <h3>Mission</h3>
+            <p>
+              By Prompt Delivery of parcels to various destination with the
+              satisfaction of customers in mind.
+            </p>
+          </div>
         </div>
       </div>
-    </React.Fragment>
+    </Fragment>
   );
 };
 

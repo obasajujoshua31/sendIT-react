@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HOmePage> should render Home page 1`] = `
+<div>
+  <Showcase />
+</div>
+`;
+
+exports[`<Show Case> should render show case component 1`] = `
+<div>
+  <div
+    className="showcase"
+  >
+    <div
+      className="container user-information"
+    >
+      <withRouter(AccountContent) />
+    </div>
+  </div>
+</div>
+`;

@@ -1,12 +1,14 @@
-import React from "react";
+import React, { Component } from "react";
 import Showcase from "../pages/Showcase";
 
-const Homepage = () => {
-  return (
-    <div>
-      <Showcase />
-    </div>
-  );
-};
+class Homepage extends Component {
+  render() {
+    return (
+      <div>
+        <Showcase />
+      </div>
+    );
+  }
+}
 
 export default Homepage;

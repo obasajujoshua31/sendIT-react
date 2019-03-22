@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` <CreateAccount>  should render CreateAccount Component 1`] = `
+<Fragment>
+  <div
+    className="account-wrapper"
+  >
+    <div
+      className="form-wrapper create-wrapper"
+    >
+      <form
+        noValidate={true}
+        onSubmit={[Function]}
+      >
+        <h2>
+          Create Account
+        </h2>
+        <div
+          className="form-oneline"
+        >
+          <div
+            className="form-group"
+          >
+            <label
+              htmlFor="firstName"
+            >
+              First Name
+            </label>
+            <input
+              className=""
+              name="firstName"
+              onChange={[Function]}
+              placeholder="First Name"
+              required={true}
+              type="text"
+              value=""
+            />
+          </div>
+          <div
+            className="form-group"
+          >
+            <label
+              htmlFor="lastName"
+            >
+              Last Name
+            </label>
+            <input
+              className=""
+              name="lastName"
+              onChange={[Function]}
+              placeholder="last Name"
+              required={true}
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          className="form-group"
+        >
+          <label
+            htmlFor="email"
+          >
+            Email
+          </label>
+          <input
+            className=""
+            name="email"
+            onChange={[Function]}
+            placeholder="yourname@example.com"
+            required={true}
+            type="email"
+            value=""
+          />
+        </div>
+        <div
+          className="form-group"
+        >
+          <label
+            htmlFor="password"
+          >
+            Password
+          </label>
+          <input
+            className=""
+            name="password"
+            onChange={[Function]}
+            placeholder="password"
+            required={true}
+            type="password"
+            value=""
+          />
+        </div>
+        <div
+          className="form-group"
+        >
+          <label
+            htmlFor="confirmPassword"
+          >
+            Confirm Password
+          </label>
+          <input
+            className=""
+            name="confirmPassword"
+            onChange={[Function]}
+            placeholder="confirm password"
+            required={true}
+            type="password"
+            value=""
+          />
+        </div>
+        <button
+          hidden={false}
+          type="submit"
+        >
+          Register
+        </button>
+      </form>
+    </div>
+  </div>
+</Fragment>
+`;

@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AccountContent should render Account Content component 1`] = `
+<Fragment>
+  <div
+    className="service-information"
+  >
+    <h1>
+      <span>
+        Just Call 
+      </span>
+      (0908754647846)
+    </h1>
+    <p>
+      We are always ready for your service
+    </p>
+    <button
+      onClick={[Function]}
+    >
+      SendIT Today
+    </button>
+  </div>
+</Fragment>
+`;

@@ -9,20 +9,20 @@ body {
   background-color: whitesmoke;
   font-family: "Nixie One", cursive;
 }
-.container {
-  margin: auto;
-  width: 90%;
-  overflow: hidden;
-}
+// .container {
+//   margin: auto;
+//   width: 90%;
+//   overflow: hidden;
+// }
 .navbar-container {
   display: flex;
   // justify-content: space-between;
 }
-.navbar ul li {
-  display: inline-block;
-  padding: 10px;
-  list-style-type: none;
-}
+// .navbar ul li {
+//   display: inline-block;
+//   padding: 10px;
+//   list-style-type: none;
+// }
 .navbar-container li i {
   color: white;
   font-size: 1.1em;
@@ -46,7 +46,7 @@ body {
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url(/src/assets/courier-service.jpg) no-repeat;
   background-size: cover;
-  height: 600px;
+  height: calc(100vh - 187px);
 }
 footer {
   background-color: $primary;
@@ -55,10 +55,11 @@ footer {
   color: white;
   font-size: 20px;
   padding: 10px;
-  // position: absolute;
-  bottom: 0;
+  align-items: center;
+  // position: fixed;
+  // bottom: 0;
   width: 100%;
-  height: 30px;
+  height: 70px;
 }
 .navbar-brand {
   color: $secondary;
@@ -124,12 +125,73 @@ footer {
     }
   }
 }
+.button {
+  padding: 3px 20px;
+  color: $primary;
+  background-color: inherit;
+  font-size: 16px;
+  cursor: pointer;
+  // margin: 1.5em auto;
+  outline: none;
+  border: none;
+  font-weight: lighter;
+  left: 40%;
+
+  &:hover {
+    background-color: $secondary;
+    color: white;
+  }
+}
+.edit {
+  background-color: $secondary;
+  color: white;
+
+  &:hover {
+    border: 1px solid $secondary;
+    background: inherit;
+    color: $primary;
+  }
+}
+.navbar-light .navbar-nav .nav-link {
+  color: white;
+  &:hover {
+    background-color: $secondary;
+    color: white;
+  }
+}
+.navbar {
+  padding: 0;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.nav-item {
+  padding-left: 1.5rem;
+}
+.edit-direction {
+  position: relative;
+  margin: 15px auto;
+  background-color: $secondary;
+  padding: 6px 20px;
+  color: white;
+
+  &:hover {
+    border: 1px solid $secondary;
+    background: inherit;
+    color: $primary;
+  }
+}
+.cancel {
+  border: 1px solid $primary;
+}
 .service-header {
   display: flex;
   justify-content: space-between;
-  padding: 10px;
-  .service-brand-name span {
-    color: $secondary;
+  padding-left: 10px;
+  padding-top: 10px;
+  .service-brand-name {
+    span {
+      color: $secondary;
+    }
   }
   .service-span {
     padding: 10px;
@@ -146,6 +208,8 @@ footer {
   display: flex;
   justify-content: center;
   padding: 10px;
+  position: relative;
+  bottom: 0;
 
   h1 {
     font-weight: bolder;
@@ -169,7 +233,8 @@ footer {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url(/src/assets/courier-services.jpg), no-repeat;
   //   background-size: cover;
-  height: 300px;
+
+  min-height: calc(100vh - 550px);
   color: white;
   //   margin-bottom: 20px;
   .about-us-header-content {
@@ -213,17 +278,17 @@ footer {
   left: 12rem;
 }
 .account-wrapper {
-  height: calc(100vh - 105px);
-  background-color: $secondary;
+  height: calc(100vh - 200px);
+  // background-color: $secondary;
 
-  .create-wrapper{
-    height: 485px;
+  .create-wrapper {
+    min-height: 485px;
   }
   .form-wrapper {
     position: relative;
-    top: 20%;
+    top: 5%;
     left: 30%;
-    width: 35%;
+    width: 45%;
     margin-left: -50px;
     padding: 30px;
     height: auto;
@@ -241,8 +306,12 @@ footer {
       display: flex;
       flex-direction: column;
       padding: 6px;
+      select {
+        height: 35px;
+        border-color: rgba(0, 0, 0, 0.3);
+      }
     }
-    .form-inline {
+    .form-oneline {
       display: flex;
       div {
         width: 100%;
@@ -268,7 +337,7 @@ footer {
     input.error {
       border-left: 5px solid red;
     }
-    .errorMsg{
+    .errorMsg {
       color: red;
       font-size: 14px;
     }
@@ -293,6 +362,183 @@ footer {
   }
 }
 
+aside {
+  top: 120px;
+  width: 20%;
+  position: fixed;
+  padding: 20px;
+  left: 0;
+  height: 100%;
+  box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.3);
+}
+aside nav ul li {
+  list-style-type: none;
+  padding: 20px 2px;
+}
+aside nav ul li a {
+  text-decoration: none;
+  padding: 10px;
+  color: lightslategray;
+  width: 100px;
+}
+aside nav ul li a:hover {
+  background-color: lightslategray;
+  color: white;
+}
+aside nav ul .active {
+  border-bottom: 1px solid burlywood;
+}
+
+.dashboard {
+  position: absolute;
+  left: 30%;
+  top: 15%;
+  height: 100%;
+  width: 80%;
+}
+.boxes div {
+  width: 200px;
+  height: 200px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.3);
+}
+.boxes {
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+}
+.box-group {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  border-bottom: 1px solid lightgray;
+  margin: auto;
+  margin-top: 3%;
+}
+.box {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+.content {
+  font-weight: bolder;
+  position: relative;
+  left: 10%;
+}
+.content-summary {
+  position: relative;
+  top: 30%;
+  right: 29%;
+  font-size: 3em;
+}
+.view-order-container {
+  /* background-color: white; */
+  // padding: 20px;
+  position: relative;
+  margin: auto;
+  width: 80%;
+  margin-top: 3%;
+  box-shadow: 0px 0px 7px 2px rgba(240, 231, 240, 1);
+  text-align: center;
+
+  h1 {
+    padding: 20px;
+    color: $primary;
+  }
+}
+.table {
+  border-collapse: collapse;
+  font-family: "Crimson Text", serif;
+  max-width: 100%;
+  margin: auto;
+  // border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.table .thead-dark th {
+  border-bottom: 2px solid $primary;
+  border-top: 2px solid $primary;
+  font-weight: 600;
+  font-size: 20px;
+  background-color: $primary;
+  border-color: $primary;
+}
+.table td {
+  padding: 20px;
+}
+.table tr {
+  padding: 10px;
+  /* width: 600px; */
+}
+.table tr:nth-child(even) {
+  background-color: #e9e6e6;
+  font-weight: bold;
+}
+.table tbody tr {
+  cursor: pointer;
+}
+.table tbody tr:hover {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.table-container {
+  height: calc(100vh - 201px);
+  h1{
+    padding-top: 1.2rem;
+    display: flex;
+    justify-content: center;
+  }
+}
+.table {
+  color: $primary;
+}
+.table h1 {
+  text-align: center;
+  padding-top: 30px;
+}
+.Modal {
+  position: absolute;
+  top: 20%;
+  background-color: white;
+  height: 60%;
+  width: 500px;
+  left: 20%;
+  margin-right: auto;
+  border-radius: 30px;
+  outline-color: $primary;
+}
+.editModal {
+  position: absolute;
+  top: 30%;
+  background-color: white;
+  height: 20%;
+  width: 500px;
+  left: 60%;
+  margin-right: auto;
+  border-radius: 30px;
+  outline-color: $primary;
+}
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: transparent;
+}
+.item-label {
+  padding: 10px;
+  // color: white;
+  flex: 2;
+  color: $primary;
+}
+.item-span {
+  flex: 3;
+  align-items: flex-end;
+  padding: 10px;
+  justify-self: center;
+  color: $secondary;
+}
 @media (max-width: 1140px) {
   .showcase {
     width: 100%;
@@ -304,23 +550,19 @@ footer {
     height: 54px;
     padding-top: 10px;
   }
-.about-us-header{
-  height: 320px;
-}
-.about-us-body{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-}
-.about-us-body div{
-  margin: 0px;
-}
-  // #app {
-  //   width: 100vh;
-  //   height: 100vh;
-  // }
+  .about-us-header {
+    min-height: calc(100vh - 320px);
+  }
+  .about-us-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .about-us-body div {
+    margin: 0px;
+  }
   footer {
-    position: relative;
+    // position: relative;
     bottom: 0;
     height: 40px;
   }
@@ -340,8 +582,7 @@ footer {
       display: none;
     }
   }
-  .account-wrapper .create-wrapper,
-   {
+  .account-wrapper .create-wrapper {
     width: 75%;
     margin-left: -107px;
   }
@@ -370,20 +611,20 @@ footer {
   .container {
     overflow: scroll;
   }
-  .navbar-container {
-    // li i {
-    //   display: block;
-    //   padding: 5px;
-    //   margin-top: -10px;
-    // }
-    // .navbar {
-    //   display: none;
-    // }
-  }
+  // .navbar-container {
+  //   // li i {
+  //   //   display: block;
+  //   //   padding: 5px;
+  //   //   margin-top: -10px;
+  //   // }
+  //   // .navbar {
+  //   //   display: none;
+  //   // }
+  // }
   footer {
-    position: relative;
+    // position: relative;
     bottom: 0;
-    height: 20px;
+    // height: 20px;
     p {
       font-size: 16px;
     }
@@ -406,7 +647,7 @@ footer {
       font-size: 25px;
     }
   }
-  .about-us-header .about-us-header-content{
+  .about-us-header .about-us-header-content {
     width: 520px;
   }
 }
@@ -422,9 +663,9 @@ footer {
   .bars-icon {
     display: none;
   }
-  .navbar-container li {
-    // display: none;
-  }
+  // .navbar-container li {
+  //   // display: none;
+  // }
   .service-header {
     // height: 50px;
     justify-content: center;
@@ -462,9 +703,9 @@ footer {
   // }
 
   footer {
-    position: relative;
-    bottom: 0;
-    height: 20px;
+    // position: relative;
+    // bottom: 0;
+    // height: 20px;
     p {
       font-size: 16px;
     }
@@ -476,7 +717,7 @@ footer {
   .about-us-header {
     height: 300px;
   }
-  
+
   .user-information {
     height: 300px;
     width: 90%;
@@ -491,11 +732,11 @@ footer {
       font-size: 25px;
     }
   }
-  .account-wrapper .sign-wrapper{
-    width:65%;
+  .account-wrapper .sign-wrapper {
+    width: 65%;
     margin-left: -98px;
   }
-  .about-us-header .about-us-header-content{
+  .about-us-header .about-us-header-content {
     width: 400px;
   }
 }
@@ -558,17 +799,17 @@ footer {
       }
     }
   }
-  .about-us-body{
+  .about-us-body {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr;
   }
-  .about-us-body .image-container{
-    grid-column: 1
+  .about-us-body .image-container {
+    grid-column: 1;
   }
-  .about-us-body div{
+  .about-us-body div {
     padding: 5px;
   }
-  .form-inline {
+  .form-oneline {
     flex-direction: column;
   }
   .account-wrapper .create-wrapper {
@@ -590,14 +831,14 @@ footer {
     // }
   }
   footer {
-    position: relative;
-    bottom: 0;
-    height: 20px;
+    // position: relative;
+    // bottom: 0;
+    // height: 20px;
     p {
       font-size: 16px;
     }
   }
-  .about-us-header .about-us-header-content{
+  .about-us-header .about-us-header-content {
     width: 280px;
     padding-top: 70px;
   }
@@ -606,7 +847,7 @@ footer {
     background-size: cover;
   }
   .about-us-header {
-    height: 300px;
+    // height: 300px;
   }
   .user-information {
     height: 300px;

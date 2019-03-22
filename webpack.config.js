@@ -1,8 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const webpack = require("webpack");
 module.exports = {
-  entry: "./src/index.js",
+  entry: ["babel-polyfill", "./src/index.js"],
 
   output: {
     path: path.join(__dirname, "/dist"),
@@ -14,9 +13,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: {
-          loader: "babel-loader"
-        }
+        use: "babel-loader"
       },
       {
         test: /\.css$|.scss$/,
@@ -27,14 +24,10 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, "/"),
     port: 8080,
-    publicPath: "http://localhost:8080",
-    hotOnly: true,
-    historyApiFallback: true
+    historyApiFallback: true,
+    compress: true
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.NoEmitOnErrorsPlugin(),
     new HtmlWebpackPlugin({
       template: "src/index.html"
     })
