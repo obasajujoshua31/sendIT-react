@@ -3,13 +3,13 @@ import axios from "axios";
 import { signUpFailure, signUpSuccess } from "../../types/types";
 import { setSignUpState } from "../setState";
 
-const baseUrl = "http://localhost:5500/api/v1/auth/signup";
+import { baseUrl } from "../../helpers/constants";
 
 const registerUser = user => dispatch => {
   const { email, password, firstName, lastName } = user;
 
   return axios
-    .post(baseUrl, {
+    .post(`${baseUrl}/auth/signup`, {
       email,
       password,
       firstName,

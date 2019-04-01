@@ -3,11 +3,9 @@ import ReactModal from "react-modal";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import cancelParcel from "../../actions/parcels/cancelParcel";
-import Spinner from "react-spinkit";
+import Spinner from "react-md-spinner";
 
-ReactModal.setAppElement("#app");
-
-class CancelParcelOrder extends Component {
+export class CancelParcelOrder extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -23,15 +21,18 @@ class CancelParcelOrder extends Component {
     e.preventDefault();
     this.props.cancelParcelOrder(this.props.parcelId);
   }
-
-  static getDerivedStateFromProps(nextProps, prevState) {
-    if (nextProps.parcelStatus !== prevState.parcelStatus) {
-      if (nextProps.parcelStatus) {
-        nextProps.history.push("/dashboard");
-      }
-      return null;
+  componentWillMount() {
+    if (process.env.NODE_ENV !== "test") {
+      ReactModal.setAppElement("#app");
     }
-    return null;
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps !== this.props) {
+      if (this.props.parcelStatus) {
+        this.props.history.push("/dashboard");
+      }
+    }
   }
 
   render() {
@@ -61,10 +62,11 @@ class CancelParcelOrder extends Component {
   }
 }
 
-const mapStateToProps = ({ parcels }) => ({
+export const mapStateToProps = ({ parcels }) => ({
   parcelStatus: parcels.parcelStatus
 });
-const mapDispatchToProps = dispatch => ({
+
+export const mapDispatchToProps = dispatch => ({
   cancelParcelOrder: id => dispatch(cancelParcel(id))
 });
 export default connect(

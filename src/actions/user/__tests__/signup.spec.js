@@ -1,8 +1,13 @@
 import configureMockStore from "redux-mock-store";
 import thunk from "redux-thunk";
 import moxios from "moxios";
-import signInUser from "../user/signin";
-import { signInSuccess, signInFailure } from "../../types/types";
+import registerUser from "../signup";
+import {
+  signUpSuccess,
+  signUpFailure,
+  signInSuccess,
+  signInFailure
+} from "../../../types/types";
 // import getPostsMock from "../../mocks/getPostsMock";
 
 const middlewares = [thunk];
@@ -24,54 +29,40 @@ describe("User actions", () => {
     moxios.uninstall();
   });
 
-  it("should dispatch signin success", () => {
+  it("should dispatch signup success", () => {
     moxios.wait(() => {
       const request = moxios.requests.mostRecent();
       request.respondWith({
         status: 200,
         response: {
-          user: {
-            isAdmin: false
-          },
-          message: "User signed in successfully",
+          message: "User signed up successfully",
           token: "xkdljsldjdo"
         }
       });
     });
 
-    const expectedActions = [
-      {
-        type: signInSuccess,
-        errorMessage: "",
-        errorMessage: "",
-        user: {
-          isAdmin: false
-        },
-        role: false
-      }
-    ];
+    const expectedActions = [{ type: signUpSuccess, errorMessage: "" }];
 
-    return store.dispatch(signInUser(mockUser)).then(() => {
+    return store.dispatch(registerUser(mockUser)).then(() => {
       // return of async actions
-      //   console.log(store.getActions());
       expect(store.getActions()).toEqual(expectedActions);
     });
   });
 
-  it("should dispatch sign in failure", () => {
+  it("should dispatch sign up failure", () => {
     moxios.wait(() => {
       const request = moxios.requests.mostRecent();
       request.respondWith({
         status: 404,
         response: {
-          message: "Invalid Email or Password"
+          message: "User already exists"
         }
       });
     });
 
-    const expectedActions = { type: signInFailure };
+    const expectedActions = { type: signUpFailure };
 
-    return store.dispatch(signInUser(mockUser)).then(() => {
+    return store.dispatch(registerUser(mockUser)).then(() => {
       // console.log(store.getActions());
       // return of async actions
       expect(store.getActions()[1]).toEqual(expectedActions);

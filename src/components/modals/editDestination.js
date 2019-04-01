@@ -3,11 +3,9 @@ import ReactModal from "react-modal";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import editParcelDestination from "../../actions/parcels/editParcel";
-import Spinner from "react-spinkit";
+import Spinner from "react-md-spinner";
 
-ReactModal.setAppElement("#app");
-
-class EditDestination extends Component {
+export class EditDestination extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -22,20 +20,26 @@ class EditDestination extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  componentWillMount() {
+    if (process.env.NODE_ENV !== "test") {
+      ReactModal.setAppElement("#app");
+    }
+  }
+
   editParcel(e) {
     e.preventDefault();
     if (
-      this.state.formError.length ||
+      this.state.formError ||
       this.props.destination === this.state.destination
     ) {
-      return null;
+      return;
     }
     this.props.editDestination(this.props.parcelId, this.state.destination);
   }
 
   handleChange(e) {
-    if (!e.target.value) {
-      this.setState({ formError: "Destination cannot be empty " });
+    if (!e.target.value.trim()) {
+      return this.setState({ formError: "Destination cannot be empty" });
     }
     this.setState({ formError: "" });
     this.setState({ destination: e.target.value });
@@ -43,16 +47,18 @@ class EditDestination extends Component {
   handleCloseModal() {
     this.setState({ showEditModal: false });
   }
-  componentDidMount() {
+  componentDidMount = () => {
     this.setState({ destination: this.props.destination });
+  };
+
+  componentDidUpdate(prevProps) {
+    if (this.props !== prevProps) {
+      if (this.props.parcelStatus) {
+        this.props.history.push("/dashboard");
+      }
+    }
   }
 
-  static getDerivedStateFromProps(nextProps, prevState) {
-    if (nextProps.parcelStatus !== prevState.parcelStatus) {
-      nextProps.history.push("/dashboard");
-    }
-    return null;
-  }
   render() {
     const { show, closeEdit } = this.props;
     return (
@@ -95,10 +101,10 @@ class EditDestination extends Component {
   }
 }
 
-const mapStateToProps = ({ parcels }) => ({
+export const mapStateToProps = ({ parcels }) => ({
   parcelStatus: parcels.parcelStatus
 });
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   editDestination: (id, destination) =>
     dispatch(editParcelDestination(id, destination))
 });

@@ -1,0 +1,128 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test for User AdminDashboard render when there is no change in props 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="table-container"
+  >
+    <div
+      className="container-not-found"
+    >
+      <MDSpinner
+        color1="rgb(66, 165, 245)"
+        color2="rgb(239, 83, 80)"
+        color3="rgb(253, 216, 53)"
+        color4="rgb(76, 175, 80)"
+        duration={1333}
+        size={28}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Test for User AdminDashboard should  1`] = `
+<Fragment>
+  <div
+    className="account-wrapper"
+  >
+    <div
+      className="box-group"
+    >
+      <div
+        className="container"
+      >
+        <div
+          className="boxes"
+        >
+          <div
+            className="box"
+          >
+            <span
+              className="content"
+            >
+              Delivered Orders
+            </span>
+            <span
+              className="content-summary"
+            >
+              0
+            </span>
+          </div>
+          <div
+            className="box"
+          >
+            <span
+              className="content"
+            >
+              Placed Orders
+            </span>
+            <span
+              className="content-summary"
+            >
+              0
+            </span>
+          </div>
+        </div>
+        <div
+          className="boxes"
+        >
+          <div
+            className="box"
+          >
+            <span
+              className="content"
+            >
+              Cancelled Orders
+            </span>
+            <span
+              className="content-summary"
+            >
+              0
+            </span>
+          </div>
+          <div
+            className="box"
+          >
+            <span
+              className="content"
+            >
+              Transiting Orders
+            </span>
+            <span
+              className="content-summary"
+            >
+              0
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Fragment>
+`;
+
+exports[`Test for User AdminDashboard should render AdminDashboard component 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="table-container"
+  >
+    <div
+      className="container-not-found"
+    >
+      <MDSpinner
+        color1="rgb(66, 165, 245)"
+        color2="rgb(239, 83, 80)"
+        color3="rgb(253, 216, 53)"
+        color4="rgb(76, 175, 80)"
+        duration={1333}
+        size={28}
+      />
+    </div>
+  </div>
+</div>
+`;

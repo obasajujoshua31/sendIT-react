@@ -1,0 +1,513 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Edit ChangeLocation Test should render Edit ChangeLocation 1`] = `
+<Modal
+  ariaHideApp={true}
+  bodyOpenClassName="ReactModal__Body--open"
+  className="editModal"
+  closeTimeoutMS={0}
+  contentLabel="Modal #1 Global Style Override Example"
+  isOpen={true}
+  onRequestClose={[MockFunction]}
+  overlayClassName="Overlay"
+  parentSelector={[Function]}
+  portalClassName="ReactModalPortal"
+  role="dialog"
+  shouldCloseOnEsc={true}
+  shouldCloseOnOverlayClick={true}
+  shouldFocusAfterRender={true}
+  shouldReturnFocusAfterClose={true}
+>
+  <div
+    style={
+      Object {
+        "alignItem": "center",
+        "backgroundColor": "#806B75",
+        "display": "flex",
+        "justifyContent": "center",
+        "padding": 15,
+        "position": "relative",
+      }
+    }
+  >
+    <span
+      style={
+        Object {
+          "bottom": 5,
+          "color": "white",
+          "cursor": "pointer",
+          "fontSize": "1.8em",
+          "padding": 5,
+          "position": "absolute",
+          "right": 5,
+        }
+      }
+    >
+      <i
+        className="far fa-times-circle"
+        onClick={[MockFunction]}
+      />
+    </span>
+    <h3
+      style={
+        Object {
+          "color": "white",
+          "fontSize": "1.4rem",
+          "fontWeight": "bold",
+        }
+      }
+    >
+      Change Parcel Location
+    </h3>
+  </div>
+  <div
+    style={
+      Object {
+        "maxWidth": "100%",
+        "padding": "10px",
+      }
+    }
+  >
+    <form
+      noValidate={true}
+      onSubmit={[Function]}
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+          }
+        }
+      >
+        <label
+          style={
+            Object {
+              "color": "#806B75",
+              "flex": 3,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          Present Location:
+        </label>
+        <input
+          name="presentLocation"
+          onChange={[Function]}
+          style={
+            Object {
+              "borderColor": "rgba(0, 0, 0, 0.3)",
+              "borderRadius": 10,
+              "color": "#806B75",
+              "flex": 4,
+              "fontSize": "14px",
+              "outline": "none",
+              "padding": "8px 10px",
+              "width": "100%",
+            }
+          }
+          type="text"
+          value="joshua"
+        />
+      </div>
+      <button
+        className="button edit-direction"
+      >
+        change Location
+      </button>
+    </form>
+  </div>
+</Modal>
+`;
+
+exports[`Edit ChangeLocation Test should render status modal if state is the same as props 1`] = `
+<Modal
+  ariaHideApp={true}
+  bodyOpenClassName="ReactModal__Body--open"
+  className="editModal"
+  closeTimeoutMS={0}
+  contentLabel="Modal #1 Global Style Override Example"
+  isOpen={true}
+  onRequestClose={[MockFunction]}
+  overlayClassName="Overlay"
+  parentSelector={[Function]}
+  portalClassName="ReactModalPortal"
+  role="dialog"
+  shouldCloseOnEsc={true}
+  shouldCloseOnOverlayClick={true}
+  shouldFocusAfterRender={true}
+  shouldReturnFocusAfterClose={true}
+>
+  <div
+    style={
+      Object {
+        "alignItem": "center",
+        "backgroundColor": "#806B75",
+        "display": "flex",
+        "justifyContent": "center",
+        "padding": 15,
+        "position": "relative",
+      }
+    }
+  >
+    <span
+      style={
+        Object {
+          "bottom": 5,
+          "color": "white",
+          "cursor": "pointer",
+          "fontSize": "1.8em",
+          "padding": 5,
+          "position": "absolute",
+          "right": 5,
+        }
+      }
+    >
+      <i
+        className="far fa-times-circle"
+        onClick={[MockFunction]}
+      />
+    </span>
+    <h3
+      style={
+        Object {
+          "color": "white",
+          "fontSize": "1.4rem",
+          "fontWeight": "bold",
+        }
+      }
+    >
+      Change Parcel Location
+    </h3>
+  </div>
+  <div
+    style={
+      Object {
+        "maxWidth": "100%",
+        "padding": "10px",
+      }
+    }
+  >
+    <form
+      noValidate={true}
+      onSubmit={
+        [MockFunction] {
+          "calls": Array [
+            Array [
+              Object {
+                "preventDefault": [MockFunction] {
+                  "calls": Array [
+                    Array [],
+                    Array [],
+                  ],
+                  "results": Array [
+                    Object {
+                      "type": "return",
+                      "value": undefined,
+                    },
+                    Object {
+                      "type": "return",
+                      "value": undefined,
+                    },
+                  ],
+                },
+              },
+            ],
+            Array [
+              Object {
+                "preventDefault": [MockFunction] {
+                  "calls": Array [
+                    Array [],
+                    Array [],
+                  ],
+                  "results": Array [
+                    Object {
+                      "type": "return",
+                      "value": undefined,
+                    },
+                    Object {
+                      "type": "return",
+                      "value": undefined,
+                    },
+                  ],
+                },
+              },
+            ],
+          ],
+          "results": Array [
+            Object {
+              "type": "return",
+              "value": null,
+            },
+            Object {
+              "type": "return",
+              "value": undefined,
+            },
+          ],
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "display": "flex",
+          }
+        }
+      >
+        <label
+          style={
+            Object {
+              "color": "#806B75",
+              "flex": 3,
+              "fontWeight": "bold",
+            }
+          }
+        >
+          Present Location:
+        </label>
+        <input
+          name="presentLocation"
+          onChange={
+            [MockFunction] {
+              "calls": Array [
+                Array [
+                  Object {
+                    "target": Object {
+                      "value": "",
+                    },
+                  },
+                ],
+                Array [
+                  Object {
+                    "target": Object {
+                      "value": "Abuja",
+                    },
+                  },
+                ],
+              ],
+              "results": Array [
+                Object {
+                  "type": "return",
+                  "value": <Modal
+                    ariaHideApp={true}
+                    bodyOpenClassName="ReactModal__Body--open"
+                    className="editModal"
+                    closeTimeoutMS={0}
+                    contentLabel="Modal #1 Global Style Override Example"
+                    isOpen={true}
+                    onRequestClose={[MockFunction]}
+                    overlayClassName="Overlay"
+                    parentSelector={[Function]}
+                    portalClassName="ReactModalPortal"
+                    role="dialog"
+                    shouldCloseOnEsc={true}
+                    shouldCloseOnOverlayClick={true}
+                    shouldFocusAfterRender={true}
+                    shouldReturnFocusAfterClose={true}
+                  >
+                    <div
+                      style={
+                        Object {
+                          "alignItem": "center",
+                          "backgroundColor": "#806B75",
+                          "display": "flex",
+                          "justifyContent": "center",
+                          "padding": 15,
+                          "position": "relative",
+                        }
+                      }
+                    >
+                      <span
+                        style={
+                          Object {
+                            "bottom": 5,
+                            "color": "white",
+                            "cursor": "pointer",
+                            "fontSize": "1.8em",
+                            "padding": 5,
+                            "position": "absolute",
+                            "right": 5,
+                          }
+                        }
+                      >
+                        <i
+                          className="far fa-times-circle"
+                          onClick={[MockFunction]}
+                        />
+                      </span>
+                      <h3
+                        style={
+                          Object {
+                            "color": "white",
+                            "fontSize": "1.4rem",
+                            "fontWeight": "bold",
+                          }
+                        }
+                      >
+                        Change Parcel Location
+                      </h3>
+                    </div>
+                    <div
+                      style={
+                        Object {
+                          "maxWidth": "100%",
+                          "padding": "10px",
+                        }
+                      }
+                    >
+                      <form
+                        noValidate={true}
+                        onSubmit={
+                          [MockFunction] {
+                            "calls": Array [
+                              Array [
+                                Object {
+                                  "preventDefault": [MockFunction] {
+                                    "calls": Array [
+                                      Array [],
+                                      Array [],
+                                    ],
+                                    "results": Array [
+                                      Object {
+                                        "type": "return",
+                                        "value": undefined,
+                                      },
+                                      Object {
+                                        "type": "return",
+                                        "value": undefined,
+                                      },
+                                    ],
+                                  },
+                                },
+                              ],
+                              Array [
+                                Object {
+                                  "preventDefault": [MockFunction] {
+                                    "calls": Array [
+                                      Array [],
+                                      Array [],
+                                    ],
+                                    "results": Array [
+                                      Object {
+                                        "type": "return",
+                                        "value": undefined,
+                                      },
+                                      Object {
+                                        "type": "return",
+                                        "value": undefined,
+                                      },
+                                    ],
+                                  },
+                                },
+                              ],
+                            ],
+                            "results": Array [
+                              Object {
+                                "type": "return",
+                                "value": null,
+                              },
+                              Object {
+                                "type": "return",
+                                "value": undefined,
+                              },
+                            ],
+                          }
+                        }
+                      >
+                        <div
+                          style={
+                            Object {
+                              "display": "flex",
+                            }
+                          }
+                        >
+                          <label
+                            style={
+                              Object {
+                                "color": "#806B75",
+                                "flex": 3,
+                                "fontWeight": "bold",
+                              }
+                            }
+                          >
+                            Present Location:
+                          </label>
+                          <input
+                            name="presentLocation"
+                            onChange={
+                              [MockFunction] {
+                                "calls": Array [
+                                  Array [
+                                    Object {
+                                      "target": Object {
+                                        "value": "",
+                                      },
+                                    },
+                                  ],
+                                  Array [
+                                    Object {
+                                      "target": Object {
+                                        "value": "Abuja",
+                                      },
+                                    },
+                                  ],
+                                ],
+                                "results": [Circular],
+                              }
+                            }
+                            style={
+                              Object {
+                                "borderColor": "rgba(0, 0, 0, 0.3)",
+                                "borderRadius": 10,
+                                "color": "#806B75",
+                                "flex": 4,
+                                "fontSize": "14px",
+                                "outline": "none",
+                                "padding": "8px 10px",
+                                "width": "100%",
+                              }
+                            }
+                            type="text"
+                            value="Abuja"
+                          />
+                        </div>
+                        <button
+                          className="button edit-direction"
+                        >
+                          change Location
+                        </button>
+                      </form>
+                    </div>
+                  </Modal>,
+                },
+                Object {
+                  "type": "return",
+                  "value": undefined,
+                },
+              ],
+            }
+          }
+          style={
+            Object {
+              "borderColor": "rgba(0, 0, 0, 0.3)",
+              "borderRadius": 10,
+              "color": "#806B75",
+              "flex": 4,
+              "fontSize": "14px",
+              "outline": "none",
+              "padding": "8px 10px",
+              "width": "100%",
+            }
+          }
+          type="text"
+          value="Abuja"
+        />
+      </div>
+      <button
+        className="button edit-direction"
+      >
+        change Location
+      </button>
+    </form>
+  </div>
+</Modal>
+`;

@@ -3,13 +3,13 @@ import axios from "axios";
 import { updateParcel, signInFailure, signInSuccess } from "../../types/types";
 import { setSignInState } from "../setState";
 
-const baseUrl = "http://localhost:5500/api/v1/parcels";
+import { baseUrl } from "../../helpers/constants";
 
 const editParcelDestination = (parcelId, destination) => dispatch => {
   const token = window.localStorage.getItem("token");
   return axios
     .put(
-      `${baseUrl}/${parcelId}/destination`,
+      `${baseUrl}/parcels/${parcelId}/destination`,
       {
         destination
       },

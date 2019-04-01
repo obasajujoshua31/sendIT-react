@@ -4,6 +4,7 @@ const organiseOrders = ({ data }) => {
   let cancelled = 0;
   let transiting = 0;
 
+
   data.forEach(parcel => {
     switch (parcel.status) {
       case "TRANSITING":

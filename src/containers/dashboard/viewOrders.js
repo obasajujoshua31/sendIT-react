@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import loadUserParcels from "../../actions/parcels/getParcels";
 import { connect } from "react-redux";
 import { withRouter, Link } from "react-router-dom";
-import Spinner from "react-spinkit";
+import Spinner from "react-md-spinner";
 import {
   signInFailure,
   signUpFailure,
@@ -12,16 +12,15 @@ import {
 import Order from "./order";
 import EditModal from "../../components/modals/edit";
 import ReactModal from "react-modal";
-ReactModal.setAppElement("#app");
-ReactModal.defaultStyles.overlay.backgroundColor = "cornsilk";
 
-class ViewOrders extends Component {
+export class ViewOrders extends Component {
   constructor(props) {
     super(props);
     this.state = {
       parcels: [],
       showModal: false,
       parcelId: "",
+      isLoading: true
     };
     this.onHandleViewOrder = this.onHandleViewOrder.bind(this);
     this.closeModal = this.closeModal.bind(this);
@@ -37,40 +36,55 @@ class ViewOrders extends Component {
   closeModal() {
     this.setState({ showModal: false });
   }
+  componentWillMount() {
+    if (process.env.NODE_ENV !== "test") {
+      ReactModal.setAppElement("#app");
+      ReactModal.defaultStyles.overlay.backgroundColor = "cornsilk";
+    }
+  }
+
   componentDidMount() {
     this.props.loadParcels(this.props.history);
   }
 
-  static getDerivedStateFromProps(nextProps, prevState) {
-    if (nextProps.authStatus !== prevState.authStatus) {
-      if (
-        nextProps.authStatus === signInFailure ||
-        nextProps.authStatus === signUpFailure
-      ) {
-        nextProps.history.push("/login");
-      }
-      return null;
-    }
-    return null;
-  }
   componentDidUpdate(prevProps) {
-    if (prevProps !== this.props && this.props.userParcels.data) {
-      this.setState({ parcels: this.props.userParcels.data });
+    if (prevProps !== this.props) {
+      if (this.props.userParcels.data) {
+        this.setState({ isLoading: false });
+        this.setState({ parcels: this.props.userParcels.data });
+      }
+      if (
+        this.props.authStatus === signInFailure ||
+        this.props.authStatus === signUpFailure
+      ) {
+        this.props.history.push("/login");
+      }
     }
   }
+
   render() {
-    // if (this.state.isLoading) {
-    //   return <Spinner name="three-bounce" color="orange" />;
-    // }
+    if (this.state.isLoading) {
+      return (
+        <div className="container">
+          <div className="table-container">
+            <div className="container-not-found">
+              <Spinner />
+            </div>
+          </div>
+        </div>
+      );
+    }
     if (!this.state.parcels.length) {
       return (
         <div className="container">
           <div className="table-container">
-            <h1>You are Welcome to SendIT Courier Services</h1>
-            <h1>You don't have any parcels yet</h1>
-            <h1>
-              <Link to="/create-order">Click here to create a Parcel</Link>
-            </h1>
+            <div className="container-not-found">
+              <h1>You are Welcome to SendIT Courier Services</h1>
+              <h1>You don't have any parcels yet</h1>
+              <h1>
+                <Link to="/create-order">Click here to create a Parcel</Link>
+              </h1>
+            </div>
           </div>
         </div>
       );
@@ -130,11 +144,11 @@ class ViewOrders extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   loadParcels: () => dispatch(loadUserParcels())
 });
 
-const mapStateToProps = ({ parcels, users }) => ({
+export const mapStateToProps = ({ parcels, users }) => ({
   userParcels: parcels.parcels,
   authStatus: users.singInStatus,
   role: users.role

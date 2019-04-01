@@ -1,5 +1,82 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<Navbar> should call logout 1`] = `
+<nav
+  className="navbar navbar-expand-lg navbar-light"
+  style={
+    Object {
+      "backgroundColor": "#806B75",
+    }
+  }
+>
+  <button
+    aria-controls="navbarNavDropdown"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+    className="navbar-toggler"
+    data-target="#navbarNavDropdown"
+    data-toggle="collapse"
+    type="button"
+  >
+    <span
+      className="navbar-toggler-icon"
+    />
+  </button>
+  <div
+    className="collapse navbar-collapse"
+    id="navbarNavDropdown"
+  >
+    <ul
+      className="navbar-nav"
+    >
+      <li
+        className="nav-item"
+      >
+        <Link
+          className="nav-link"
+          replace={false}
+          to="/dashboard"
+        >
+          Parcel Summary
+        </Link>
+      </li>
+      <li
+        className="nav-item"
+      >
+        <Link
+          className="nav-link"
+          replace={false}
+          to="/create-order"
+        >
+          Send Parcels
+        </Link>
+      </li>
+      <li
+        className="nav-item"
+      >
+        <Link
+          className="nav-link"
+          replace={false}
+          to="/view-orders"
+        >
+          View Orders
+        </Link>
+      </li>
+      <li
+        className="nav-item"
+      >
+        <a
+          className="nav-link"
+          onClick={[Function]}
+        >
+          Logout
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+`;
+
 exports[`<Navbar> should render a navbar component 1`] = `
 <nav
   className="navbar navbar-expand-lg navbar-light"

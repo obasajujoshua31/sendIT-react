@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import Spinner from "react-md-spinner";
 import { withRouter } from "react-router-dom";
 import validateCreateForm, { isValid } from "../../validations/createValidator";
 import registerUser from "../../actions/user/signup";
@@ -22,7 +23,8 @@ export class CreateAccount extends Component {
       email: "",
       password: "",
       confirmPassword: "",
-      isDeactivated: false
+      isDeactivated: false,
+      isLoading: false
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -41,26 +43,36 @@ export class CreateAccount extends Component {
   handleSubmit(e) {
     const { firstName, lastName, email, password } = this.state;
     e.preventDefault();
+    this.setState({ isLoading: true });
     if (!isValid(this.state)) {
-      return;
+      return this.setState({ isLoading: false });
     } else {
       this.props.signUp({ firstName, lastName, email, password });
     }
   }
 
-  componentDidMount() {
-    if (this.props.signUpStatus === signUpSuccess) {
-      this.props.history.push("/view-orders/");
-    }
-  }
-  UNSAFE_componentWillReceiveProps(nextProps) {
-    if (nextProps.signUpStatus === signUpSuccess) {
-      this.props.history.push("/view-orders/");
-      toast.success("Welcome to SendIT");
+  componentDidUpdate(prevProps) {
+    if (prevProps !== this.props) {
+      if (this.props.signUpStatus === signUpSuccess) {
+        this.props.history.push("/view-orders/");
+        toast.success("Welcome to SendIT");
+      }
     }
   }
 
   render() {
+    if (this.state.isLoading) {
+      return (
+        <div className="container">
+          <div className="table-container">
+            <div className="container-not-found">
+              <Spinner />
+            </div>
+          </div>
+        </div>
+      );
+    }
+
     const {
       firstName,
       lastName,

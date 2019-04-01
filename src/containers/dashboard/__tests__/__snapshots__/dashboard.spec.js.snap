@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test for User Dashboard should render Dashboard component 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="table-container"
+  >
+    <div
+      className="container-not-found"
+    >
+      <MDSpinner
+        color1="rgb(66, 165, 245)"
+        color2="rgb(239, 83, 80)"
+        color3="rgb(253, 216, 53)"
+        color4="rgb(76, 175, 80)"
+        duration={1333}
+        size={28}
+      />
+    </div>
+  </div>
+</div>
+`;

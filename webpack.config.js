@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const dotenvWebpack = require("dotenv-webpack");
 module.exports = {
   entry: ["babel-polyfill", "./src/index.js"],
 
@@ -28,6 +29,7 @@ module.exports = {
     compress: true
   },
   plugins: [
+    new dotenvWebpack(),
     new HtmlWebpackPlugin({
       template: "src/index.html"
     })

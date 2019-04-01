@@ -2,7 +2,7 @@ import axios from "axios";
 
 import { createOrderSuccess, createOrderFailure } from "../../types/types";
 
-const baseUrl = "http://localhost:5500/api/v1/parcels";
+import { baseUrl } from "../../helpers/constants";
 
 const createParcels = ({
   parcelName,
@@ -14,7 +14,7 @@ const createParcels = ({
   const token = window.localStorage.getItem("token");
   return axios
     .post(
-      baseUrl,
+      `${baseUrl}/parcels`,
       {
         parcelName,
         from: pickUpLocation,

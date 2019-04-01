@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
+import Spinner from "react-md-spinner";
 import createParcel from "../../actions/parcels/createOrders";
 import { signInFailure, signUpFailure } from "../../types/types";
 import validateParcelCreateForm, {
@@ -8,7 +9,7 @@ import validateParcelCreateForm, {
 } from "../../validations/parcelValidator";
 import loadUserParcels from "../../actions/parcels/getParcels";
 
-class CreateOrder extends Component {
+export class CreateOrder extends Component {
   constructor(props) {
     super(props);
 
@@ -24,27 +25,32 @@ class CreateOrder extends Component {
         destination: "",
         pickUpLocation: "",
         weight: ""
-      }
+      },
+      isLoading: true
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentDidMount() {
+  componentDidMount = () => {
     this.props.loadParcels();
-  }
-  componentWillReceiveProps(nextProps) {
-    if (
-      nextProps.authStatus === signInFailure ||
-      nextProps.authStatus === signUpFailure
-    ) {
-      this.props.history.push("/login");
-    }
+  };
 
-    if (nextProps.createdStatus) {
-      this.props.history.push("view-orders");
+  componentDidUpdate(prevProps) {
+    if (prevProps !== this.props) {
+      if (
+        this.props.authStatus === signInFailure ||
+        this.props.authStatus === signUpFailure
+      ) {
+        this.props.history.push("/login");
+      }
+      this.setState({ isLoading: false });
+      if (this.props.createdStatus) {
+        this.props.history.push("view-orders");
+      }
     }
   }
+
   handleChange(e) {
     const { name, value } = e.target;
     this.setState({ [name]: value });
@@ -55,15 +61,30 @@ class CreateOrder extends Component {
       this.setState({ isDeactivated: false });
     }
   }
+
   handleSubmit(e) {
     e.preventDefault();
+    this.setState({ isLoading: true });
     if (!isValid(this.state)) {
-      return;
+      return this.setState({ isLoading: false });
     } else {
       this.props.createParcel(this.state);
     }
   }
+
   render() {
+    if (this.state.isLoading) {
+      return (
+        <div className="container">
+          <div className="table-container">
+            <div className="container-not-found">
+              <Spinner />
+            </div>
+          </div>
+        </div>
+      );
+    }
+
     const {
       parcelName,
       weight,
@@ -166,12 +187,12 @@ class CreateOrder extends Component {
     );
   }
 }
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   loadParcels: () => dispatch(loadUserParcels()),
   createParcel: parcel => dispatch(createParcel(parcel))
 });
 
-const mapStateToProps = ({ users, parcels }) => ({
+export const mapStateToProps = ({ users, parcels }) => ({
   authStatus: users.singInStatus,
   createdStatus: parcels.parcelStatus
 });

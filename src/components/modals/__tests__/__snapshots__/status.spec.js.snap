@@ -1,0 +1,310 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Edit ChangeStatus Test should render Edit ChangeStatus 1`] = `
+<Modal
+  ariaHideApp={true}
+  bodyOpenClassName="ReactModal__Body--open"
+  className="editModal"
+  closeTimeoutMS={0}
+  contentLabel="Modal #1 Global Style Override Example"
+  isOpen={true}
+  onRequestClose={false}
+  overlayClassName="Overlay"
+  parentSelector={[Function]}
+  portalClassName="ReactModalPortal"
+  role="dialog"
+  shouldCloseOnEsc={true}
+  shouldCloseOnOverlayClick={true}
+  shouldFocusAfterRender={true}
+  shouldReturnFocusAfterClose={true}
+>
+  <div
+    style={
+      Object {
+        "alignItem": "center",
+        "backgroundColor": "#806B75",
+        "display": "flex",
+        "justifyContent": "center",
+        "padding": 15,
+        "position": "relative",
+      }
+    }
+  >
+    <span
+      style={
+        Object {
+          "bottom": 5,
+          "color": "white",
+          "cursor": "pointer",
+          "fontSize": "1.8em",
+          "padding": 5,
+          "position": "absolute",
+          "right": 5,
+        }
+      }
+    >
+      <i
+        className="far fa-times-circle"
+        onClick={false}
+      />
+    </span>
+    <h3
+      style={
+        Object {
+          "color": "white",
+          "fontSize": "1.4rem",
+          "fontWeight": "bold",
+        }
+      }
+    >
+      Change Parcel Status
+    </h3>
+  </div>
+  <div
+    style={
+      Object {
+        "alignItem": "center",
+        "display": "flex",
+        "justifyContent": "center",
+        "maxWidth": "100%",
+        "padding": "10px",
+      }
+    }
+  >
+    <form
+      noValidate={true}
+      onSubmit={[Function]}
+    >
+      <select
+        name="status"
+        onChange={[Function]}
+        style={
+          Object {
+            "height": "30px",
+            "width": "200px",
+          }
+        }
+        value="PLACED"
+      >
+        <option
+          disabled={true}
+          value="CANCELLED"
+        >
+          Cancelled
+        </option>
+        <option
+          disabled={true}
+          value="PLACED"
+        >
+          Placed
+        </option>
+        <option
+          value="TRANSITING"
+        >
+          Transiting
+        </option>
+        <option
+          value="DELIVERED"
+        >
+          Delivered
+        </option>
+      </select>
+      <br />
+      <button
+        style={
+          Object {
+            "backgroundColor": "#fd9b01",
+            "border": "none",
+            "color": "white",
+            "cursor": "pointer",
+            "margin": 0,
+            "marginTop": "10px",
+            "outline": "none",
+            "padding": "10px 20px",
+            "position": "relative",
+          }
+        }
+      >
+        Confirm Change Status
+      </button>
+    </form>
+  </div>
+</Modal>
+`;
+
+exports[`Edit ChangeStatus Test should render status modal if state is the same as props 1`] = `
+<Modal
+  ariaHideApp={true}
+  bodyOpenClassName="ReactModal__Body--open"
+  className="editModal"
+  closeTimeoutMS={0}
+  contentLabel="Modal #1 Global Style Override Example"
+  isOpen={true}
+  onRequestClose={false}
+  overlayClassName="Overlay"
+  parentSelector={[Function]}
+  portalClassName="ReactModalPortal"
+  role="dialog"
+  shouldCloseOnEsc={true}
+  shouldCloseOnOverlayClick={true}
+  shouldFocusAfterRender={true}
+  shouldReturnFocusAfterClose={true}
+>
+  <div
+    style={
+      Object {
+        "alignItem": "center",
+        "backgroundColor": "#806B75",
+        "display": "flex",
+        "justifyContent": "center",
+        "padding": 15,
+        "position": "relative",
+      }
+    }
+  >
+    <span
+      style={
+        Object {
+          "bottom": 5,
+          "color": "white",
+          "cursor": "pointer",
+          "fontSize": "1.8em",
+          "padding": 5,
+          "position": "absolute",
+          "right": 5,
+        }
+      }
+    >
+      <i
+        className="far fa-times-circle"
+        onClick={false}
+      />
+    </span>
+    <h3
+      style={
+        Object {
+          "color": "white",
+          "fontSize": "1.4rem",
+          "fontWeight": "bold",
+        }
+      }
+    >
+      Change Parcel Status
+    </h3>
+  </div>
+  <div
+    style={
+      Object {
+        "alignItem": "center",
+        "display": "flex",
+        "justifyContent": "center",
+        "maxWidth": "100%",
+        "padding": "10px",
+      }
+    }
+  >
+    <form
+      noValidate={true}
+      onSubmit={
+        [MockFunction] {
+          "calls": Array [
+            Array [
+              Object {
+                "preventDefault": [MockFunction] {
+                  "calls": Array [
+                    Array [],
+                  ],
+                  "results": Array [
+                    Object {
+                      "type": "return",
+                      "value": undefined,
+                    },
+                  ],
+                },
+              },
+            ],
+          ],
+          "results": Array [
+            Object {
+              "type": "return",
+              "value": undefined,
+            },
+          ],
+        }
+      }
+    >
+      <select
+        name="status"
+        onChange={
+          [MockFunction] {
+            "calls": Array [
+              Array [
+                Object {
+                  "target": Object {
+                    "name": "status",
+                    "value": "TRANSITING",
+                  },
+                },
+              ],
+            ],
+            "results": Array [
+              Object {
+                "type": "return",
+                "value": undefined,
+              },
+            ],
+          }
+        }
+        style={
+          Object {
+            "height": "30px",
+            "width": "200px",
+          }
+        }
+        value="TRANSITING"
+      >
+        <option
+          disabled={true}
+          value="CANCELLED"
+        >
+          Cancelled
+        </option>
+        <option
+          disabled={true}
+          value="PLACED"
+        >
+          Placed
+        </option>
+        <option
+          value="TRANSITING"
+        >
+          Transiting
+        </option>
+        <option
+          value="DELIVERED"
+        >
+          Delivered
+        </option>
+      </select>
+      <br />
+      <button
+        style={
+          Object {
+            "backgroundColor": "#fd9b01",
+            "border": "none",
+            "color": "white",
+            "cursor": "pointer",
+            "margin": 0,
+            "marginTop": "10px",
+            "outline": "none",
+            "padding": "10px 20px",
+            "position": "relative",
+          }
+        }
+      >
+        Confirm Change Status
+      </button>
+    </form>
+  </div>
+</Modal>
+`;

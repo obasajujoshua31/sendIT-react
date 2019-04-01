@@ -1,5 +1,974 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[` <CreateAccount>  should re render when the form is invalid when the submit button is clicked 1`] = `
+<Fragment>
+  <div
+    className="account-wrapper"
+  >
+    <div
+      className="form-wrapper create-wrapper"
+    >
+      <form
+        noValidate={true}
+        onSubmit={
+          [MockFunction] {
+            "calls": Array [
+              Array [
+                Object {
+                  "preventDefault": [MockFunction] {
+                    "calls": Array [
+                      Array [],
+                    ],
+                    "results": Array [
+                      Object {
+                        "type": "return",
+                        "value": undefined,
+                      },
+                    ],
+                  },
+                },
+              ],
+            ],
+            "results": Array [
+              Object {
+                "type": "return",
+                "value": <Fragment>
+                  <div
+                    className="account-wrapper"
+                  >
+                    <div
+                      className="form-wrapper create-wrapper"
+                    >
+                      <form
+                        noValidate={true}
+                        onSubmit={
+                          [MockFunction] {
+                            "calls": Array [
+                              Array [
+                                Object {
+                                  "preventDefault": [MockFunction] {
+                                    "calls": Array [
+                                      Array [],
+                                    ],
+                                    "results": Array [
+                                      Object {
+                                        "type": "return",
+                                        "value": undefined,
+                                      },
+                                    ],
+                                  },
+                                },
+                              ],
+                            ],
+                            "results": [Circular],
+                          }
+                        }
+                      >
+                        <h2>
+                          Create Account
+                        </h2>
+                        <div
+                          className="form-oneline"
+                        >
+                          <div
+                            className="form-group"
+                          >
+                            <label
+                              htmlFor="firstName"
+                            >
+                              First Name
+                            </label>
+                            <input
+                              className=""
+                              name="firstName"
+                              onChange={[Function]}
+                              placeholder="First Name"
+                              required={true}
+                              type="text"
+                              value=""
+                            />
+                          </div>
+                          <div
+                            className="form-group"
+                          >
+                            <label
+                              htmlFor="lastName"
+                            >
+                              Last Name
+                            </label>
+                            <input
+                              className=""
+                              name="lastName"
+                              onChange={[Function]}
+                              placeholder="last Name"
+                              required={true}
+                              type="text"
+                              value=""
+                            />
+                          </div>
+                        </div>
+                        <div
+                          className="form-group"
+                        >
+                          <label
+                            htmlFor="email"
+                          >
+                            Email
+                          </label>
+                          <input
+                            className=""
+                            name="email"
+                            onChange={[Function]}
+                            placeholder="yourname@example.com"
+                            required={true}
+                            type="email"
+                            value="me@example.com"
+                          />
+                        </div>
+                        <div
+                          className="form-group"
+                        >
+                          <label
+                            htmlFor="password"
+                          >
+                            Password
+                          </label>
+                          <input
+                            className=""
+                            name="password"
+                            onChange={[Function]}
+                            placeholder="password"
+                            required={true}
+                            type="password"
+                            value="000000"
+                          />
+                        </div>
+                        <div
+                          className="form-group"
+                        >
+                          <label
+                            htmlFor="confirmPassword"
+                          >
+                            Confirm Password
+                          </label>
+                          <input
+                            className=""
+                            name="confirmPassword"
+                            onChange={[Function]}
+                            placeholder="confirm password"
+                            required={true}
+                            type="password"
+                            value="000000"
+                          />
+                        </div>
+                        <button
+                          hidden={false}
+                          type="submit"
+                        >
+                          Register
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                </Fragment>,
+              },
+            ],
+          }
+        }
+      >
+        <h2>
+          Create Account
+        </h2>
+        <div
+          className="form-oneline"
+        >
+          <div
+            className="form-group"
+          >
+            <label
+              htmlFor="firstName"
+            >
+              First Name
+            </label>
+            <input
+              className=""
+              name="firstName"
+              onChange={[Function]}
+              placeholder="First Name"
+              required={true}
+              type="text"
+              value=""
+            />
+          </div>
+          <div
+            className="form-group"
+          >
+            <label
+              htmlFor="lastName"
+            >
+              Last Name
+            </label>
+            <input
+              className=""
+              name="lastName"
+              onChange={[Function]}
+              placeholder="last Name"
+              required={true}
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+        <div
+          className="form-group"
+        >
+          <label
+            htmlFor="email"
+          >
+            Email
+          </label>
+          <input
+            className=""
+            name="email"
+            onChange={[Function]}
+            placeholder="yourname@example.com"
+            required={true}
+            type="email"
+            value="me@example.com"
+          />
+        </div>
+        <div
+          className="form-group"
+        >
+          <label
+            htmlFor="password"
+          >
+            Password
+          </label>
+          <input
+            className=""
+            name="password"
+            onChange={[Function]}
+            placeholder="password"
+            required={true}
+            type="password"
+            value="000000"
+          />
+        </div>
+        <div
+          className="form-group"
+        >
+          <label
+            htmlFor="confirmPassword"
+          >
+            Confirm Password
+          </label>
+          <input
+            className=""
+            name="confirmPassword"
+            onChange={[Function]}
+            placeholder="confirm password"
+            required={true}
+            type="password"
+            value="000000"
+          />
+        </div>
+        <button
+          hidden={false}
+          type="submit"
+        >
+          Register
+        </button>
+      </form>
+    </div>
+  </div>
+</Fragment>
+`;
+
+exports[` <CreateAccount>  should re render when there is error in the form 1`] = `
+<Fragment>
+  <div
+    className="account-wrapper"
+  >
+    <div
+      className="form-wrapper create-wrapper"
+    >
+      <form
+        noValidate={true}
+        onSubmit={
+          [MockFunction] {
+            "calls": Array [
+              Array [
+                Object {
+                  "preventDefault": [MockFunction] {
+                    "calls": Array [
+                      Array [],
+                    ],
+                    "results": Array [
+                      Object {
+                        "type": "return",
+                        "value": undefined,
+                      },
+                    ],
+                  },
+                },
+              ],
+            ],
+            "results": Array [
+              Object {
+                "type": "return",
+                "value": <Fragment>
+                  <div
+                    className="account-wrapper"
+                  >
+                    <div
+                      className="form-wrapper create-wrapper"
+                    >
+                      <form
+                        noValidate={true}
+                        onSubmit={
+                          [MockFunction] {
+                            "calls": Array [
+                              Array [
+                                Object {
+                                  "preventDefault": [MockFunction] {
+                                    "calls": Array [
+                                      Array [],
+                                    ],
+                                    "results": Array [
+                                      Object {
+                                        "type": "return",
+                                        "value": undefined,
+                                      },
+                                    ],
+                                  },
+                                },
+                              ],
+                            ],
+                            "results": [Circular],
+                          }
+                        }
+                      >
+                        <h2>
+                          Create Account
+                        </h2>
+                        <div
+                          className="form-oneline"
+                        >
+                          <div
+                            className="form-group"
+                          >
+                            <label
+                              htmlFor="firstName"
+                            >
+                              First Name
+                            </label>
+                            <input
+                              className="error"
+                              name="firstName"
+                              onChange={[Function]}
+                              placeholder="First Name"
+                              required={true}
+                              type="text"
+                              value=""
+                            />
+                            <span
+                              className="errorMsg"
+                            >
+                              kdkdkkd
+                            </span>
+                          </div>
+                          <div
+                            className="form-group"
+                          >
+                            <label
+                              htmlFor="lastName"
+                            >
+                              Last Name
+                            </label>
+                            <input
+                              className="error"
+                              name="lastName"
+                              onChange={[Function]}
+                              placeholder="last Name"
+                              required={true}
+                              type="text"
+                              value=""
+                            />
+                            <span
+                              className="errorMsg"
+                            >
+                              kdkdkkd
+                               
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          className="form-group"
+                        >
+                          <label
+                            htmlFor="email"
+                          >
+                            Email
+                          </label>
+                          <input
+                            className="error"
+                            name="email"
+                            onChange={[Function]}
+                            placeholder="yourname@example.com"
+                            required={true}
+                            type="email"
+                            value="me@example.com"
+                          />
+                          <span
+                            className="errorMsg"
+                          >
+                            lldldlld
+                          </span>
+                        </div>
+                        <div
+                          className="form-group"
+                        >
+                          <label
+                            htmlFor="password"
+                          >
+                            Password
+                          </label>
+                          <input
+                            className="error"
+                            name="password"
+                            onChange={[Function]}
+                            placeholder="password"
+                            required={true}
+                            type="password"
+                            value="000000"
+                          />
+                          <span
+                            className="errorMsg"
+                          >
+                            kdkdkddkkd
+                          </span>
+                        </div>
+                        <div
+                          className="form-group"
+                        >
+                          <label
+                            htmlFor="confirmPassword"
+                          >
+                            Confirm Password
+                          </label>
+                          <input
+                            className="error"
+                            name="confirmPassword"
+                            onChange={[Function]}
+                            placeholder="confirm password"
+                            required={true}
+                            type="password"
+                            value="000000"
+                          />
+                          <span
+                            className="errorMsg"
+                          >
+                            llld
+                          </span>
+                        </div>
+                        <button
+                          hidden={false}
+                          type="submit"
+                        >
+                          Register
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                </Fragment>,
+              },
+            ],
+          }
+        }
+      >
+        <h2>
+          Create Account
+        </h2>
+        <div
+          className="form-oneline"
+        >
+          <div
+            className="form-group"
+          >
+            <label
+              htmlFor="firstName"
+            >
+              First Name
+            </label>
+            <input
+              className="error"
+              name="firstName"
+              onChange={[Function]}
+              placeholder="First Name"
+              required={true}
+              type="text"
+              value=""
+            />
+            <span
+              className="errorMsg"
+            >
+              kdkdkkd
+            </span>
+          </div>
+          <div
+            className="form-group"
+          >
+            <label
+              htmlFor="lastName"
+            >
+              Last Name
+            </label>
+            <input
+              className="error"
+              name="lastName"
+              onChange={[Function]}
+              placeholder="last Name"
+              required={true}
+              type="text"
+              value=""
+            />
+            <span
+              className="errorMsg"
+            >
+              kdkdkkd
+               
+            </span>
+          </div>
+        </div>
+        <div
+          className="form-group"
+        >
+          <label
+            htmlFor="email"
+          >
+            Email
+          </label>
+          <input
+            className="error"
+            name="email"
+            onChange={[Function]}
+            placeholder="yourname@example.com"
+            required={true}
+            type="email"
+            value="me@example.com"
+          />
+          <span
+            className="errorMsg"
+          >
+            lldldlld
+          </span>
+        </div>
+        <div
+          className="form-group"
+        >
+          <label
+            htmlFor="password"
+          >
+            Password
+          </label>
+          <input
+            className="error"
+            name="password"
+            onChange={[Function]}
+            placeholder="password"
+            required={true}
+            type="password"
+            value="000000"
+          />
+          <span
+            className="errorMsg"
+          >
+            kdkdkddkkd
+          </span>
+        </div>
+        <div
+          className="form-group"
+        >
+          <label
+            htmlFor="confirmPassword"
+          >
+            Confirm Password
+          </label>
+          <input
+            className="error"
+            name="confirmPassword"
+            onChange={[Function]}
+            placeholder="confirm password"
+            required={true}
+            type="password"
+            value="000000"
+          />
+          <span
+            className="errorMsg"
+          >
+            llld
+          </span>
+        </div>
+        <button
+          hidden={false}
+          type="submit"
+        >
+          Register
+        </button>
+      </form>
+    </div>
+  </div>
+</Fragment>
+`;
+
+exports[` <CreateAccount>  should re render when there is error in the form 2`] = `
+<Fragment>
+  <div
+    className="account-wrapper"
+  >
+    <div
+      className="form-wrapper create-wrapper"
+    >
+      <form
+        noValidate={true}
+        onSubmit={
+          [MockFunction] {
+            "calls": Array [
+              Array [
+                Object {
+                  "preventDefault": [MockFunction] {
+                    "calls": Array [
+                      Array [],
+                    ],
+                    "results": Array [
+                      Object {
+                        "type": "return",
+                        "value": undefined,
+                      },
+                    ],
+                  },
+                },
+              ],
+            ],
+            "results": Array [
+              Object {
+                "type": "return",
+                "value": <Fragment>
+                  <div
+                    className="account-wrapper"
+                  >
+                    <div
+                      className="form-wrapper create-wrapper"
+                    >
+                      <form
+                        noValidate={true}
+                        onSubmit={
+                          [MockFunction] {
+                            "calls": Array [
+                              Array [
+                                Object {
+                                  "preventDefault": [MockFunction] {
+                                    "calls": Array [
+                                      Array [],
+                                    ],
+                                    "results": Array [
+                                      Object {
+                                        "type": "return",
+                                        "value": undefined,
+                                      },
+                                    ],
+                                  },
+                                },
+                              ],
+                            ],
+                            "results": [Circular],
+                          }
+                        }
+                      >
+                        <h2>
+                          Create Account
+                        </h2>
+                        <div
+                          className="form-oneline"
+                        >
+                          <div
+                            className="form-group"
+                          >
+                            <label
+                              htmlFor="firstName"
+                            >
+                              First Name
+                            </label>
+                            <input
+                              className="error"
+                              name="firstName"
+                              onChange={[Function]}
+                              placeholder="First Name"
+                              required={true}
+                              type="text"
+                              value=""
+                            />
+                            <span
+                              className="errorMsg"
+                            >
+                              kdkdkkd
+                            </span>
+                          </div>
+                          <div
+                            className="form-group"
+                          >
+                            <label
+                              htmlFor="lastName"
+                            >
+                              Last Name
+                            </label>
+                            <input
+                              className="error"
+                              name="lastName"
+                              onChange={[Function]}
+                              placeholder="last Name"
+                              required={true}
+                              type="text"
+                              value=""
+                            />
+                            <span
+                              className="errorMsg"
+                            >
+                              kdkdkkd
+                               
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          className="form-group"
+                        >
+                          <label
+                            htmlFor="email"
+                          >
+                            Email
+                          </label>
+                          <input
+                            className="error"
+                            name="email"
+                            onChange={[Function]}
+                            placeholder="yourname@example.com"
+                            required={true}
+                            type="email"
+                            value="me@example.com"
+                          />
+                          <span
+                            className="errorMsg"
+                          >
+                            dkkdkdkkk
+                          </span>
+                          <span
+                            className="errorMsg"
+                          >
+                            lldldlld
+                          </span>
+                        </div>
+                        <div
+                          className="form-group"
+                        >
+                          <label
+                            htmlFor="password"
+                          >
+                            Password
+                          </label>
+                          <input
+                            className="error"
+                            name="password"
+                            onChange={[Function]}
+                            placeholder="password"
+                            required={true}
+                            type="password"
+                            value="000000"
+                          />
+                          <span
+                            className="errorMsg"
+                          >
+                            kdkdkddkkd
+                          </span>
+                        </div>
+                        <div
+                          className="form-group"
+                        >
+                          <label
+                            htmlFor="confirmPassword"
+                          >
+                            Confirm Password
+                          </label>
+                          <input
+                            className="error"
+                            name="confirmPassword"
+                            onChange={[Function]}
+                            placeholder="confirm password"
+                            required={true}
+                            type="password"
+                            value="000000"
+                          />
+                          <span
+                            className="errorMsg"
+                          >
+                            llld
+                          </span>
+                        </div>
+                        <button
+                          hidden={false}
+                          type="submit"
+                        >
+                          Register
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                </Fragment>,
+              },
+            ],
+          }
+        }
+      >
+        <h2>
+          Create Account
+        </h2>
+        <div
+          className="form-oneline"
+        >
+          <div
+            className="form-group"
+          >
+            <label
+              htmlFor="firstName"
+            >
+              First Name
+            </label>
+            <input
+              className="error"
+              name="firstName"
+              onChange={[Function]}
+              placeholder="First Name"
+              required={true}
+              type="text"
+              value=""
+            />
+            <span
+              className="errorMsg"
+            >
+              kdkdkkd
+            </span>
+          </div>
+          <div
+            className="form-group"
+          >
+            <label
+              htmlFor="lastName"
+            >
+              Last Name
+            </label>
+            <input
+              className="error"
+              name="lastName"
+              onChange={[Function]}
+              placeholder="last Name"
+              required={true}
+              type="text"
+              value=""
+            />
+            <span
+              className="errorMsg"
+            >
+              kdkdkkd
+               
+            </span>
+          </div>
+        </div>
+        <div
+          className="form-group"
+        >
+          <label
+            htmlFor="email"
+          >
+            Email
+          </label>
+          <input
+            className="error"
+            name="email"
+            onChange={[Function]}
+            placeholder="yourname@example.com"
+            required={true}
+            type="email"
+            value="me@example.com"
+          />
+          <span
+            className="errorMsg"
+          >
+            dkkdkdkkk
+          </span>
+          <span
+            className="errorMsg"
+          >
+            lldldlld
+          </span>
+        </div>
+        <div
+          className="form-group"
+        >
+          <label
+            htmlFor="password"
+          >
+            Password
+          </label>
+          <input
+            className="error"
+            name="password"
+            onChange={[Function]}
+            placeholder="password"
+            required={true}
+            type="password"
+            value="000000"
+          />
+          <span
+            className="errorMsg"
+          >
+            kdkdkddkkd
+          </span>
+        </div>
+        <div
+          className="form-group"
+        >
+          <label
+            htmlFor="confirmPassword"
+          >
+            Confirm Password
+          </label>
+          <input
+            className="error"
+            name="confirmPassword"
+            onChange={[Function]}
+            placeholder="confirm password"
+            required={true}
+            type="password"
+            value="000000"
+          />
+          <span
+            className="errorMsg"
+          >
+            llld
+          </span>
+        </div>
+        <button
+          hidden={false}
+          type="submit"
+        >
+          Register
+        </button>
+      </form>
+    </div>
+  </div>
+</Fragment>
+`;
+
 exports[` <CreateAccount>  should render CreateAccount Component 1`] = `
 <Fragment>
   <div
@@ -107,6 +1076,127 @@ exports[` <CreateAccount>  should render CreateAccount Component 1`] = `
             required={true}
             type="password"
             value=""
+          />
+        </div>
+        <button
+          hidden={false}
+          type="submit"
+        >
+          Register
+        </button>
+      </form>
+    </div>
+  </div>
+</Fragment>
+`;
+
+exports[` <CreateAccount>  should render when props changes but it is not sign up success 1`] = `
+<Fragment>
+  <div
+    className="account-wrapper"
+  >
+    <div
+      className="form-wrapper create-wrapper"
+    >
+      <form
+        noValidate={true}
+        onSubmit={[Function]}
+      >
+        <h2>
+          Create Account
+        </h2>
+        <div
+          className="form-oneline"
+        >
+          <div
+            className="form-group"
+          >
+            <label
+              htmlFor="firstName"
+            >
+              First Name
+            </label>
+            <input
+              className=""
+              name="firstName"
+              onChange={[Function]}
+              placeholder="First Name"
+              required={true}
+              type="text"
+              value="dkkdkkd"
+            />
+          </div>
+          <div
+            className="form-group"
+          >
+            <label
+              htmlFor="lastName"
+            >
+              Last Name
+            </label>
+            <input
+              className=""
+              name="lastName"
+              onChange={[Function]}
+              placeholder="last Name"
+              required={true}
+              type="text"
+              value="lldldld"
+            />
+          </div>
+        </div>
+        <div
+          className="form-group"
+        >
+          <label
+            htmlFor="email"
+          >
+            Email
+          </label>
+          <input
+            className=""
+            name="email"
+            onChange={[Function]}
+            placeholder="yourname@example.com"
+            required={true}
+            type="email"
+            value="me@example.com"
+          />
+        </div>
+        <div
+          className="form-group"
+        >
+          <label
+            htmlFor="password"
+          >
+            Password
+          </label>
+          <input
+            className=""
+            name="password"
+            onChange={[Function]}
+            placeholder="password"
+            required={true}
+            type="password"
+            value="000000"
+          />
+        </div>
+        <div
+          className="form-group"
+        >
+          <label
+            htmlFor="confirmPassword"
+          >
+            Confirm Password
+          </label>
+          <input
+            className=""
+            name="confirmPassword"
+            onChange={[Function]}
+            placeholder="confirm password"
+            required={true}
+            type="password"
+            value="000000"
           />
         </div>
         <button

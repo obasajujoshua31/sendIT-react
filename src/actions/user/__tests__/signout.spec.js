@@ -1,7 +1,7 @@
 import configureMockStore from "redux-mock-store";
 import thunk from "redux-thunk";
-import signOutUser from "../user/signout";
-import { isLoggedOut } from "../../types/types";
+import signOutUser from "../signout";
+import { isLoggedOut } from "../../../types/types";
 // import getPostsMock from "../../mocks/getPostsMock";
 
 const middlewares = [thunk];

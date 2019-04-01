@@ -1,0 +1,977 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` <CreateOrder>  should re render when the form is invalid when the submit button is clicked 1`] = `
+<Fragment>
+  <div
+    className="account-wrapper"
+  >
+    <div
+      className="form-wrapper create-wrapper"
+    >
+      <form
+        noValidate={true}
+        onSubmit={
+          [MockFunction] {
+            "calls": Array [
+              Array [
+                Object {
+                  "preventDefault": [MockFunction] {
+                    "calls": Array [
+                      Array [],
+                    ],
+                    "results": Array [
+                      Object {
+                        "type": "return",
+                        "value": undefined,
+                      },
+                    ],
+                  },
+                },
+              ],
+            ],
+            "results": Array [
+              Object {
+                "type": "return",
+                "value": <Fragment>
+                  <div
+                    className="account-wrapper"
+                  >
+                    <div
+                      className="form-wrapper create-wrapper"
+                    >
+                      <form
+                        noValidate={true}
+                        onSubmit={
+                          [MockFunction] {
+                            "calls": Array [
+                              Array [
+                                Object {
+                                  "preventDefault": [MockFunction] {
+                                    "calls": Array [
+                                      Array [],
+                                    ],
+                                    "results": Array [
+                                      Object {
+                                        "type": "return",
+                                        "value": undefined,
+                                      },
+                                    ],
+                                  },
+                                },
+                              ],
+                            ],
+                            "results": [Circular],
+                          }
+                        }
+                      >
+                        <h2>
+                          Create Parcel
+                        </h2>
+                        <div
+                          className="form-oneline"
+                        >
+                          <div
+                            className="form-group"
+                          >
+                            <label
+                              htmlFor="parcelName"
+                            >
+                              Parcel Name
+                            </label>
+                            <input
+                              className=""
+                              name="parcelName"
+                              onChange={[Function]}
+                              placeholder="Parcel Name"
+                              required={true}
+                              type="text"
+                              value=""
+                            />
+                          </div>
+                          <div
+                            className="form-group"
+                          >
+                            <label
+                              htmlFor="parcel Weight"
+                            >
+                              Weight
+                            </label>
+                            <input
+                              className=""
+                              name="weight"
+                              onChange={[Function]}
+                              placeholder="Weight"
+                              required={true}
+                              type="number"
+                              value={4}
+                            />
+                          </div>
+                        </div>
+                        <div
+                          className="form-group"
+                        >
+                          <label
+                            htmlFor="weightMetric"
+                          >
+                            Weight Metric
+                          </label>
+                          <select
+                            name="weightMetric"
+                            onChange={[Function]}
+                            value="Kg"
+                          >
+                            <option
+                              value="Kg"
+                            >
+                              Kg
+                            </option>
+                            <option
+                              value="g"
+                            >
+                              g
+                            </option>
+                          </select>
+                        </div>
+                        <div
+                          className="form-group"
+                        >
+                          <label
+                            htmlFor="pickUpLocation"
+                          >
+                            Pick Up Location
+                          </label>
+                          <input
+                            className=""
+                            name="pickUpLocation"
+                            onChange={[Function]}
+                            placeholder="Your PickUp Location"
+                            required={true}
+                            type="text"
+                            value="dldlldll"
+                          />
+                        </div>
+                        <div
+                          className="form-group"
+                        >
+                          <label
+                            htmlFor="destination"
+                          >
+                            Your Destination
+                          </label>
+                          <input
+                            className=""
+                            name="destination"
+                            onChange={[Function]}
+                            placeholder="Your Destination"
+                            required={true}
+                            type="text"
+                            value=""
+                          />
+                        </div>
+                        <button
+                          hidden={false}
+                          type="submit"
+                        >
+                          Send Parcel
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                </Fragment>,
+              },
+            ],
+          }
+        }
+      >
+        <h2>
+          Create Parcel
+        </h2>
+        <div
+          className="form-oneline"
+        >
+          <div
+            className="form-group"
+          >
+            <label
+              htmlFor="parcelName"
+            >
+              Parcel Name
+            </label>
+            <input
+              className=""
+              name="parcelName"
+              onChange={[Function]}
+              placeholder="Parcel Name"
+              required={true}
+              type="text"
+              value=""
+            />
+          </div>
+          <div
+            className="form-group"
+          >
+            <label
+              htmlFor="parcel Weight"
+            >
+              Weight
+            </label>
+            <input
+              className=""
+              name="weight"
+              onChange={[Function]}
+              placeholder="Weight"
+              required={true}
+              type="number"
+              value={4}
+            />
+          </div>
+        </div>
+        <div
+          className="form-group"
+        >
+          <label
+            htmlFor="weightMetric"
+          >
+            Weight Metric
+          </label>
+          <select
+            name="weightMetric"
+            onChange={[Function]}
+            value="Kg"
+          >
+            <option
+              value="Kg"
+            >
+              Kg
+            </option>
+            <option
+              value="g"
+            >
+              g
+            </option>
+          </select>
+        </div>
+        <div
+          className="form-group"
+        >
+          <label
+            htmlFor="pickUpLocation"
+          >
+            Pick Up Location
+          </label>
+          <input
+            className=""
+            name="pickUpLocation"
+            onChange={[Function]}
+            placeholder="Your PickUp Location"
+            required={true}
+            type="text"
+            value="dldlldll"
+          />
+        </div>
+        <div
+          className="form-group"
+        >
+          <label
+            htmlFor="destination"
+          >
+            Your Destination
+          </label>
+          <input
+            className=""
+            name="destination"
+            onChange={[Function]}
+            placeholder="Your Destination"
+            required={true}
+            type="text"
+            value=""
+          />
+        </div>
+        <button
+          hidden={false}
+          type="submit"
+        >
+          Send Parcel
+        </button>
+      </form>
+    </div>
+  </div>
+</Fragment>
+`;
+
+exports[` <CreateOrder>  should re render when there is error in the form 1`] = `
+<Fragment>
+  <div
+    className="account-wrapper"
+  >
+    <div
+      className="form-wrapper create-wrapper"
+    >
+      <form
+        noValidate={true}
+        onSubmit={
+          [MockFunction] {
+            "calls": Array [
+              Array [
+                Object {
+                  "preventDefault": [MockFunction] {
+                    "calls": Array [
+                      Array [],
+                    ],
+                    "results": Array [
+                      Object {
+                        "type": "return",
+                        "value": undefined,
+                      },
+                    ],
+                  },
+                },
+              ],
+            ],
+            "results": Array [
+              Object {
+                "type": "return",
+                "value": <Fragment>
+                  <div
+                    className="account-wrapper"
+                  >
+                    <div
+                      className="form-wrapper create-wrapper"
+                    >
+                      <form
+                        noValidate={true}
+                        onSubmit={
+                          [MockFunction] {
+                            "calls": Array [
+                              Array [
+                                Object {
+                                  "preventDefault": [MockFunction] {
+                                    "calls": Array [
+                                      Array [],
+                                    ],
+                                    "results": Array [
+                                      Object {
+                                        "type": "return",
+                                        "value": undefined,
+                                      },
+                                    ],
+                                  },
+                                },
+                              ],
+                            ],
+                            "results": [Circular],
+                          }
+                        }
+                      >
+                        <h2>
+                          Create Parcel
+                        </h2>
+                        <div
+                          className="form-oneline"
+                        >
+                          <div
+                            className="form-group"
+                          >
+                            <label
+                              htmlFor="parcelName"
+                            >
+                              Parcel Name
+                            </label>
+                            <input
+                              className="error"
+                              name="parcelName"
+                              onChange={[Function]}
+                              placeholder="Parcel Name"
+                              required={true}
+                              type="text"
+                              value=""
+                            />
+                            <span
+                              className="errorMsg"
+                            >
+                              kdkdkddkkd
+                            </span>
+                          </div>
+                          <div
+                            className="form-group"
+                          >
+                            <label
+                              htmlFor="parcel Weight"
+                            >
+                              Weight
+                            </label>
+                            <input
+                              className="error"
+                              name="weight"
+                              onChange={[Function]}
+                              placeholder="Weight"
+                              required={true}
+                              type="number"
+                              value={4}
+                            />
+                            <span
+                              className="errorMsg"
+                            >
+                              kdkdkkd
+                               
+                            </span>
+                          </div>
+                        </div>
+                        <div
+                          className="form-group"
+                        >
+                          <label
+                            htmlFor="weightMetric"
+                          >
+                            Weight Metric
+                          </label>
+                          <select
+                            name="weightMetric"
+                            onChange={[Function]}
+                            value="Kg"
+                          >
+                            <option
+                              value="Kg"
+                            >
+                              Kg
+                            </option>
+                            <option
+                              value="g"
+                            >
+                              g
+                            </option>
+                          </select>
+                        </div>
+                        <div
+                          className="form-group"
+                        >
+                          <label
+                            htmlFor="pickUpLocation"
+                          >
+                            Pick Up Location
+                          </label>
+                          <input
+                            className="error"
+                            name="pickUpLocation"
+                            onChange={[Function]}
+                            placeholder="Your PickUp Location"
+                            required={true}
+                            type="text"
+                            value="dldlldll"
+                          />
+                          <span
+                            className="errorMsg"
+                          >
+                            kdkdkkd
+                          </span>
+                        </div>
+                        <div
+                          className="form-group"
+                        >
+                          <label
+                            htmlFor="destination"
+                          >
+                            Your Destination
+                          </label>
+                          <input
+                            className="error"
+                            name="destination"
+                            onChange={[Function]}
+                            placeholder="Your Destination"
+                            required={true}
+                            type="text"
+                            value=""
+                          />
+                          <span
+                            className="errorMsg"
+                          >
+                            llld
+                          </span>
+                        </div>
+                        <button
+                          hidden={true}
+                          type="submit"
+                        >
+                          Send Parcel
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                </Fragment>,
+              },
+            ],
+          }
+        }
+      >
+        <h2>
+          Create Parcel
+        </h2>
+        <div
+          className="form-oneline"
+        >
+          <div
+            className="form-group"
+          >
+            <label
+              htmlFor="parcelName"
+            >
+              Parcel Name
+            </label>
+            <input
+              className="error"
+              name="parcelName"
+              onChange={[Function]}
+              placeholder="Parcel Name"
+              required={true}
+              type="text"
+              value=""
+            />
+            <span
+              className="errorMsg"
+            >
+              kdkdkddkkd
+            </span>
+          </div>
+          <div
+            className="form-group"
+          >
+            <label
+              htmlFor="parcel Weight"
+            >
+              Weight
+            </label>
+            <input
+              className="error"
+              name="weight"
+              onChange={[Function]}
+              placeholder="Weight"
+              required={true}
+              type="number"
+              value={4}
+            />
+            <span
+              className="errorMsg"
+            >
+              kdkdkkd
+               
+            </span>
+          </div>
+        </div>
+        <div
+          className="form-group"
+        >
+          <label
+            htmlFor="weightMetric"
+          >
+            Weight Metric
+          </label>
+          <select
+            name="weightMetric"
+            onChange={[Function]}
+            value="Kg"
+          >
+            <option
+              value="Kg"
+            >
+              Kg
+            </option>
+            <option
+              value="g"
+            >
+              g
+            </option>
+          </select>
+        </div>
+        <div
+          className="form-group"
+        >
+          <label
+            htmlFor="pickUpLocation"
+          >
+            Pick Up Location
+          </label>
+          <input
+            className="error"
+            name="pickUpLocation"
+            onChange={[Function]}
+            placeholder="Your PickUp Location"
+            required={true}
+            type="text"
+            value="dldlldll"
+          />
+          <span
+            className="errorMsg"
+          >
+            kdkdkkd
+          </span>
+        </div>
+        <div
+          className="form-group"
+        >
+          <label
+            htmlFor="destination"
+          >
+            Your Destination
+          </label>
+          <input
+            className="error"
+            name="destination"
+            onChange={[Function]}
+            placeholder="Your Destination"
+            required={true}
+            type="text"
+            value=""
+          />
+          <span
+            className="errorMsg"
+          >
+            llld
+          </span>
+        </div>
+        <button
+          hidden={true}
+          type="submit"
+        >
+          Send Parcel
+        </button>
+      </form>
+    </div>
+  </div>
+</Fragment>
+`;
+
+exports[` <CreateOrder>  should render CreateOrder Component 1`] = `
+<div
+  className="container"
+>
+  <div
+    className="table-container"
+  >
+    <div
+      className="container-not-found"
+    >
+      <MDSpinner
+        color1="rgb(66, 165, 245)"
+        color2="rgb(239, 83, 80)"
+        color3="rgb(253, 216, 53)"
+        color4="rgb(76, 175, 80)"
+        duration={1333}
+        size={28}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[` <CreateOrder>  should render when there the user is authenticated 1`] = `
+<Fragment>
+  <div
+    className="account-wrapper"
+  >
+    <div
+      className="form-wrapper create-wrapper"
+    >
+      <form
+        noValidate={true}
+        onSubmit={
+          [MockFunction] {
+            "calls": Array [
+              Array [
+                Object {
+                  "preventDefault": [MockFunction] {
+                    "calls": Array [
+                      Array [],
+                    ],
+                    "results": Array [
+                      Object {
+                        "type": "return",
+                        "value": undefined,
+                      },
+                    ],
+                  },
+                },
+              ],
+              Array [
+                Object {
+                  "preventDefault": [Function],
+                },
+              ],
+            ],
+            "results": Array [
+              Object {
+                "type": "return",
+                "value": <Fragment>
+                  <div
+                    className="account-wrapper"
+                  >
+                    <div
+                      className="form-wrapper create-wrapper"
+                    >
+                      <form
+                        noValidate={true}
+                        onSubmit={
+                          [MockFunction] {
+                            "calls": Array [
+                              Array [
+                                Object {
+                                  "preventDefault": [MockFunction] {
+                                    "calls": Array [
+                                      Array [],
+                                    ],
+                                    "results": Array [
+                                      Object {
+                                        "type": "return",
+                                        "value": undefined,
+                                      },
+                                    ],
+                                  },
+                                },
+                              ],
+                              Array [
+                                Object {
+                                  "preventDefault": [Function],
+                                },
+                              ],
+                            ],
+                            "results": [Circular],
+                          }
+                        }
+                      >
+                        <h2>
+                          Create Parcel
+                        </h2>
+                        <div
+                          className="form-oneline"
+                        >
+                          <div
+                            className="form-group"
+                          >
+                            <label
+                              htmlFor="parcelName"
+                            >
+                              Parcel Name
+                            </label>
+                            <input
+                              className=""
+                              name="parcelName"
+                              onChange={[Function]}
+                              placeholder="Parcel Name"
+                              required={true}
+                              type="text"
+                              value="Monkey"
+                            />
+                          </div>
+                          <div
+                            className="form-group"
+                          >
+                            <label
+                              htmlFor="parcel Weight"
+                            >
+                              Weight
+                            </label>
+                            <input
+                              className=""
+                              name="weight"
+                              onChange={[Function]}
+                              placeholder="Weight"
+                              required={true}
+                              type="number"
+                              value={34}
+                            />
+                          </div>
+                        </div>
+                        <div
+                          className="form-group"
+                        >
+                          <label
+                            htmlFor="weightMetric"
+                          >
+                            Weight Metric
+                          </label>
+                          <select
+                            name="weightMetric"
+                            onChange={[Function]}
+                            value="Kg"
+                          >
+                            <option
+                              value="Kg"
+                            >
+                              Kg
+                            </option>
+                            <option
+                              value="g"
+                            >
+                              g
+                            </option>
+                          </select>
+                        </div>
+                        <div
+                          className="form-group"
+                        >
+                          <label
+                            htmlFor="pickUpLocation"
+                          >
+                            Pick Up Location
+                          </label>
+                          <input
+                            className=""
+                            name="pickUpLocation"
+                            onChange={[Function]}
+                            placeholder="Your PickUp Location"
+                            required={true}
+                            type="text"
+                            value="monkeygorillacom"
+                          />
+                        </div>
+                        <div
+                          className="form-group"
+                        >
+                          <label
+                            htmlFor="destination"
+                          >
+                            Your Destination
+                          </label>
+                          <input
+                            className=""
+                            name="destination"
+                            onChange={[Function]}
+                            placeholder="Your Destination"
+                            required={true}
+                            type="text"
+                            value="Gorilla"
+                          />
+                        </div>
+                        <button
+                          hidden={true}
+                          type="submit"
+                        >
+                          Send Parcel
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                </Fragment>,
+              },
+              Object {
+                "type": "return",
+                "value": undefined,
+              },
+            ],
+          }
+        }
+      >
+        <h2>
+          Create Parcel
+        </h2>
+        <div
+          className="form-oneline"
+        >
+          <div
+            className="form-group"
+          >
+            <label
+              htmlFor="parcelName"
+            >
+              Parcel Name
+            </label>
+            <input
+              className=""
+              name="parcelName"
+              onChange={[Function]}
+              placeholder="Parcel Name"
+              required={true}
+              type="text"
+              value="Monkey"
+            />
+          </div>
+          <div
+            className="form-group"
+          >
+            <label
+              htmlFor="parcel Weight"
+            >
+              Weight
+            </label>
+            <input
+              className=""
+              name="weight"
+              onChange={[Function]}
+              placeholder="Weight"
+              required={true}
+              type="number"
+              value={34}
+            />
+          </div>
+        </div>
+        <div
+          className="form-group"
+        >
+          <label
+            htmlFor="weightMetric"
+          >
+            Weight Metric
+          </label>
+          <select
+            name="weightMetric"
+            onChange={[Function]}
+            value="Kg"
+          >
+            <option
+              value="Kg"
+            >
+              Kg
+            </option>
+            <option
+              value="g"
+            >
+              g
+            </option>
+          </select>
+        </div>
+        <div
+          className="form-group"
+        >
+          <label
+            htmlFor="pickUpLocation"
+          >
+            Pick Up Location
+          </label>
+          <input
+            className=""
+            name="pickUpLocation"
+            onChange={[Function]}
+            placeholder="Your PickUp Location"
+            required={true}
+            type="text"
+            value="monkeygorillacom"
+          />
+        </div>
+        <div
+          className="form-group"
+        >
+          <label
+            htmlFor="destination"
+          >
+            Your Destination
+          </label>
+          <input
+            className=""
+            name="destination"
+            onChange={[Function]}
+            placeholder="Your Destination"
+            required={true}
+            type="text"
+            value="Gorilla"
+          />
+        </div>
+        <button
+          hidden={true}
+          type="submit"
+        >
+          Send Parcel
+        </button>
+      </form>
+    </div>
+  </div>
+</Fragment>
+`;
