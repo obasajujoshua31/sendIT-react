@@ -19,7 +19,9 @@ const signUserIn = user => dispatch => {
       );
     })
     .catch(error => {
-      dispatch(setSignInState(signInFailure, null, error.response.data.error));
+      dispatch(
+        setSignInState(signInFailure, null, null, error.response.data.error)
+      );
     });
 };
 

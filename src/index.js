@@ -7,7 +7,7 @@ import Base from "./components/App";
 const App = () => (
   <Fragment>
     <Base />
-    <ToastContainer autoClose={2500} />;
+    <ToastContainer autoClose={2500} />
   </Fragment>
 );
 

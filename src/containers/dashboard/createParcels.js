@@ -79,7 +79,7 @@ class CreateOrder extends Component {
             <form onSubmit={this.handleSubmit} noValidate>
               <h2>Create Parcel</h2>
 
-              <div className="form-inline">
+              <div className="form-oneline">
                 <div className="form-group">
                   <label htmlFor="parcelName">Parcel Name</label>
                   <input

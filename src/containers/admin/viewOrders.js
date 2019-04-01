@@ -65,7 +65,7 @@ class AdminViewOrders extends Component {
     return (
       <React.Fragment>
         <div className="view-order-container">
-          <h1>All Orders</h1>
+          <h1>All Available Orders</h1>
           <table className="table" align="center">
             <thead>
               <tr>

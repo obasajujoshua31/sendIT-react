@@ -1,1 +1,8 @@
-node_modules
+### Build Dependencies
+
+\node_modules
+
+### Coverage Reports
+coverage
+
+yarn-error.log

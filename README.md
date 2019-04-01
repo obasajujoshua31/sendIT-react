@@ -1,0 +1,1 @@
+[![Coverage Status](https://coveralls.io/repos/github/obasajujoshua31/sendIT-react/badge.svg?branch=ch-test-components-164833754)](https://coveralls.io/github/obasajujoshua31/sendIT-react?branch=develop)

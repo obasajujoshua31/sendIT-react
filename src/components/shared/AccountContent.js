@@ -1,23 +1,13 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
-import { connect } from "react-redux";
-import { signInSuccess } from "../../types/types";
-import loadUserParcels from "../../actions/parcels/getParcels";
 
-class AccountContent extends Component {
+export class AccountContent extends Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
   }
   handleClick() {
-    this.props.loadParcels();
-  }
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.singInStatus === signInSuccess) {
-      this.props.history.push("/create-order");
-    } else {
-      this.props.history.push("/login");
-    }
+    this.props.history.push("view-orders");
   }
   render() {
     return (
@@ -34,13 +24,4 @@ class AccountContent extends Component {
   }
 }
 
-const mapStateToProps = ({ users }) => ({
-  singInStatus: users.singInStatus
-});
-const mapDispatchToProps = dispatch => ({
-  loadParcels: () => dispatch(loadUserParcels())
-});
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(withRouter(AccountContent));
+export default withRouter(AccountContent);

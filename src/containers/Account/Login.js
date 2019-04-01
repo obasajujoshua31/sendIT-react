@@ -1,14 +1,14 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import { connect } from "react-redux";
 import propTypes from "prop-types";
 import { toast } from "react-toastify";
 import signUserIn from "../../actions/user/signin";
 import { signInSuccess, signInFailure } from "../../types/types";
 import { withRouter } from "react-router-dom";
-import Spinner from "react-spinkit";
+// import Spinner from "react-spinkit";
 import isValidLoginForm from "../../validations/loginValidator";
 
-class Login extends Component {
+export class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -21,7 +21,6 @@ class Login extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-  ShowSpinner = () => this.setState({ isShowSpinner: true, loading: true });
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.singInStatus === signInSuccess) {
@@ -30,14 +29,10 @@ class Login extends Component {
       } else {
         this.props.history.push("/view-orders/");
       }
-      toast.success("You are successfully signed in");
+      toast.success("You are successfully logged in");
     }
     if (nextProps.errorMessage) {
-      this.setState(() => ({
-        isLoading: false,
-        isShowSpinner: false
-      }));
-      toast.warn(nextProps.errorMessage);
+      toast.error(nextProps.errorMessage);
     }
   }
   handleChange(e) {
@@ -52,24 +47,24 @@ class Login extends Component {
         formErrors: "Invalid Credentials!"
       });
     }
-    this.ShowSpinner();
+    // this.ShowSpinner();
     this.setState({ email: "", password: "" });
     this.props.signIn({ email, password });
   }
 
   render() {
     const { email, password, isShowSpinner, formErrors } = this.state;
-    const isflyingSpinner = <Spinner name="three-bounce" color="orange" />;
+    // const isflyingSpinner = <Spinner name="three-bounce" color="orange" />;
 
     return (
-      <React.Fragment>
+      <Fragment>
         <div className="account-wrapper">
           <div className="form-wrapper sign-wrapper">
             <form onSubmit={this.handleSubmit} noValidate>
               {formErrors.length > 0 && (
                 <span className="errorMsg">{formErrors}</span>
               )}
-              {isShowSpinner ? isflyingSpinner : ""}
+              {/* {isShowSpinner ? isflyingSpinner : ""} */}
               <h2>Sign In</h2>
               {this.props.errorMessage.length > 0 && (
                 <span className="errorMsg">{this.props.errorMessage}</span>
@@ -98,18 +93,18 @@ class Login extends Component {
             </form>
           </div>
         </div>
-      </React.Fragment>
+      </Fragment>
     );
   }
 }
-const mapStateToProps = ({ users }) => ({
+export const mapStateToProps = ({ users }) => ({
   singInStatus: users.singInStatus,
   errorMessage: users.errorMessage,
   role: users.role,
   errMsg: users.errMsg
 });
 
-const mapDispatchToProps = dispatch => {
+export const mapDispatchToProps = dispatch => {
   return {
     signIn: user => dispatch(signUserIn(user))
   };

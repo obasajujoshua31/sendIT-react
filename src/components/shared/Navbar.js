@@ -4,52 +4,72 @@ import { connect } from "react-redux";
 import logOutUser from "../../actions/user/signout";
 import { isLoggedOut, signInSuccess, signUpSuccess } from "../../types/types";
 
-const guestLink = (
+
+const GuestLink = (
   <React.Fragment>
-    <li>
-      <Link to="/">Home</Link>
+    <li className="nav-item">
+      <Link className="nav-link" to="/">
+        Home <span className="sr-only">(current)</span>
+      </Link>
     </li>
-    <li>
-      <Link to="/about">About Us</Link>
+    <li className="nav-item">
+      <Link className="nav-link" to="/about">
+        About Us
+      </Link>
     </li>
-    <li>
-      <Link to="/signup">Create Account</Link>
-    </li>
-    <li>
-      <Link to="/login">Sign In</Link>
+    <li className="nav-item">
+      <Link className="nav-link" to="/signup">
+        Create Account
+      </Link>
+    </li>{" "}
+    <li className="nav-item">
+      <Link className="nav-link" to="/login">
+        Sign in
+      </Link>
     </li>
   </React.Fragment>
 );
 
-const Navbar = ({ logout, singInStatus, history, role }) => {
+export const Navbar = ({ logout, singInStatus, history, role }) => {
   const singInUserLink = (
     <React.Fragment>
       {role ? (
-        <li>
-          <Link to="/admin-dashboard">Parcel Summary</Link>
+        <li className="nav-item">
+          <Link to="/admin-dashboard" className="nav-link">
+            Parcel Summary
+          </Link>
         </li>
       ) : (
-        <li>
-          <Link to="/dashboard">Parcel Summary</Link>
+        <li className="nav-item">
+          <Link to="/dashboard" className="nav-link">
+            Parcel Summary
+          </Link>
         </li>
       )}
       {!role && (
-        <li>
-          <Link to="/create-order">Send Parcels</Link>
+        <li className="nav-item">
+          <Link to="/create-order" className="nav-link">
+            Send Parcels
+          </Link>
         </li>
       )}
       {role ? (
-        <li>
-          <Link to="/admin-view-orders">View Orders</Link>
+        <li className="nav-item">
+          <Link to="/admin-view-orders" className="nav-link">
+            View Orders
+          </Link>
         </li>
       ) : (
-        <li>
-          <Link to="/view-orders">View Orders</Link>
+        <li className="nav-item">
+          <Link to="/view-orders" className="nav-link">
+            View Orders
+          </Link>
         </li>
       )}
 
-      <li>
+      <li className="nav-item">
         <a
+          className="nav-link"
           onClick={() => {
             logout();
             history.push("/");
@@ -60,33 +80,39 @@ const Navbar = ({ logout, singInStatus, history, role }) => {
       </li>
     </React.Fragment>
   );
+
   return (
-    <div>
-      <div className="navbar-wrapper">
-        <div className="container">
-          <div className="navbar-container">
-            <li className="bars-icon">
-              <i className="fas fa-bars" />
-            </li>
-            <nav className="navbar">
-              <ul>
-                {singInStatus === (signInSuccess || signUpSuccess)
-                  ? singInUserLink
-                  : guestLink}
-              </ul>
-            </nav>
-          </div>
-        </div>
+    <nav
+      className="navbar navbar-expand-lg navbar-light"
+      style={{ backgroundColor: "#806B75" }}
+    >
+      <button
+        className="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span className="navbar-toggler-icon" />
+      </button>
+      <div className="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul className="navbar-nav">
+          {singInStatus === (signInSuccess || signUpSuccess)
+            ? singInUserLink
+            : GuestLink}
+        </ul>
       </div>
-    </div>
+    </nav>
   );
 };
-const mapStateToProps = ({ users }) => ({
+export const mapStateToProps = ({ users }) => ({
   singInStatus: users.singInStatus,
   role: users.role
 });
 
-const mapDispatchToProps = () => dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logOutUser(isLoggedOut))
 });
 

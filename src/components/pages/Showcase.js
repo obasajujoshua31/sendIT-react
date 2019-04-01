@@ -7,10 +7,10 @@ const Showcase = () => {
       <div className="showcase">
         <div className="container user-information">
           <AccountContent />
+          {/* <PageFooter/> */}
           
         </div>
       </div>
-      <PageFooter />
     </div>
   );
 };

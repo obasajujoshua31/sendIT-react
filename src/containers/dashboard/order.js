@@ -20,7 +20,7 @@ class Order extends Component {
     return (
       <React.Fragment>
         <tr onClick={() => onHandleViewOrder(parcel_id)}>
-          <td>{`#${parcel_id}`}</td>
+          <th scope="row">{`#${parcel_id}`}</th>
           <td>{parcel_name}</td>
           <td>{pick_up_location}</td>
           <td>{destination}</td>

@@ -9,20 +9,20 @@ body {
   background-color: whitesmoke;
   font-family: "Nixie One", cursive;
 }
-.container {
-  margin: auto;
-  width: 90%;
-  overflow: hidden;
-}
+// .container {
+//   margin: auto;
+//   width: 90%;
+//   overflow: hidden;
+// }
 .navbar-container {
   display: flex;
   // justify-content: space-between;
 }
-.navbar ul li {
-  display: inline-block;
-  padding: 10px;
-  list-style-type: none;
-}
+// .navbar ul li {
+//   display: inline-block;
+//   padding: 10px;
+//   list-style-type: none;
+// }
 .navbar-container li i {
   color: white;
   font-size: 1.1em;
@@ -46,7 +46,7 @@ body {
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url(/src/assets/courier-service.jpg) no-repeat;
   background-size: cover;
-  height: 600px;
+  height: calc(100vh - 187px);
 }
 footer {
   background-color: $primary;
@@ -55,10 +55,11 @@ footer {
   color: white;
   font-size: 20px;
   padding: 10px;
-  position: fixed;
-  bottom: 0;
+  align-items: center;
+  // position: fixed;
+  // bottom: 0;
   width: 100%;
-  height: 30px;
+  height: 70px;
 }
 .navbar-brand {
   color: $secondary;
@@ -151,6 +152,21 @@ footer {
     color: $primary;
   }
 }
+.navbar-light .navbar-nav .nav-link {
+  color: white;
+  &:hover {
+    background-color: $secondary;
+    color: white;
+  }
+}
+.navbar {
+  padding: 0;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.nav-item {
+  padding-left: 1.5rem;
+}
 .edit-direction {
   position: relative;
   margin: 15px auto;
@@ -170,9 +186,12 @@ footer {
 .service-header {
   display: flex;
   justify-content: space-between;
-  padding: 10px;
-  .service-brand-name span {
-    color: $secondary;
+  padding-left: 10px;
+  padding-top: 10px;
+  .service-brand-name {
+    span {
+      color: $secondary;
+    }
   }
   .service-span {
     padding: 10px;
@@ -189,6 +208,8 @@ footer {
   display: flex;
   justify-content: center;
   padding: 10px;
+  position: relative;
+  bottom: 0;
 
   h1 {
     font-weight: bolder;
@@ -212,7 +233,8 @@ footer {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url(/src/assets/courier-services.jpg), no-repeat;
   //   background-size: cover;
-  height: 300px;
+
+  min-height: calc(100vh - 550px);
   color: white;
   //   margin-bottom: 20px;
   .about-us-header-content {
@@ -256,15 +278,15 @@ footer {
   left: 12rem;
 }
 .account-wrapper {
-  height: calc(100vh - 105px);
+  height: calc(100vh - 200px);
   // background-color: $secondary;
 
   .create-wrapper {
-    height: 485px;
+    min-height: 485px;
   }
   .form-wrapper {
     position: relative;
-    top: 20%;
+    top: 5%;
     left: 30%;
     width: 45%;
     margin-left: -50px;
@@ -286,9 +308,10 @@ footer {
       padding: 6px;
       select {
         height: 35px;
+        border-color: rgba(0, 0, 0, 0.3);
       }
     }
-    .form-inline {
+    .form-oneline {
       display: flex;
       div {
         width: 100%;
@@ -431,11 +454,13 @@ aside nav ul .active {
   margin: auto;
   // border: 1px solid rgba(0, 0, 0, 0.1);
 }
-.table thead {
+.table .thead-dark th {
   border-bottom: 2px solid $primary;
   border-top: 2px solid $primary;
   font-weight: 600;
   font-size: 20px;
+  background-color: $primary;
+  border-color: $primary;
 }
 .table td {
   padding: 20px;
@@ -455,11 +480,21 @@ aside nav ul .active {
   border: 1px solid rgba(0, 0, 0, 0.3);
   box-shadow: 1px 5px 5px 5px rgba(0, 0, 0, 0.1);
 }
+
+.table-container {
+  height: calc(100vh - 201px);
+  h1{
+    padding-top: 1.2rem;
+    display: flex;
+    justify-content: center;
+  }
+}
 .table {
   color: $primary;
 }
 .table h1 {
   text-align: center;
+  padding-top: 30px;
 }
 .Modal {
   position: absolute;
@@ -516,7 +551,7 @@ aside nav ul .active {
     padding-top: 10px;
   }
   .about-us-header {
-    height: 320px;
+    min-height: calc(100vh - 320px);
   }
   .about-us-body {
     display: grid;
@@ -589,7 +624,7 @@ aside nav ul .active {
   footer {
     // position: relative;
     bottom: 0;
-    height: 20px;
+    // height: 20px;
     p {
       font-size: 16px;
     }
@@ -669,8 +704,8 @@ aside nav ul .active {
 
   footer {
     // position: relative;
-    bottom: 0;
-    height: 20px;
+    // bottom: 0;
+    // height: 20px;
     p {
       font-size: 16px;
     }
@@ -774,7 +809,7 @@ aside nav ul .active {
   .about-us-body div {
     padding: 5px;
   }
-  .form-inline {
+  .form-oneline {
     flex-direction: column;
   }
   .account-wrapper .create-wrapper {
@@ -797,8 +832,8 @@ aside nav ul .active {
   }
   footer {
     // position: relative;
-    bottom: 0;
-    height: 20px;
+    // bottom: 0;
+    // height: 20px;
     p {
       font-size: 16px;
     }
@@ -812,7 +847,7 @@ aside nav ul .active {
     background-size: cover;
   }
   .about-us-header {
-    height: 300px;
+    // height: 300px;
   }
   .user-information {
     height: 300px;

@@ -221,9 +221,9 @@ const itemStyle = {
 const modalFooterStyle = {
   backgroundColor: "#e9e6e6",
   width: "100%",
-  position: "absolute",
-  bottom: "0",
-  height: "40px",
+  // position: "absolute",
+  // bottom: "0",
+  // height: "40px",
   display: "flex",
   padding: "10px 0px",
   justifyContent: "space-around"

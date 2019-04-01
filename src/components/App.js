@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import "../sass/main.scss";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Homepage from "./pages/Homepage";
@@ -21,7 +21,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router>
-          <React.Fragment>
+          <Fragment>
             <PageHeader />
             <Navbar />
             <Switch>
@@ -36,7 +36,7 @@ class App extends Component {
               <Route path="/admin-view-orders/" component={AdminViewOrders} />
             </Switch>
             <Footer />
-          </React.Fragment>
+          </Fragment>
         </Router>
       </Provider>
     );

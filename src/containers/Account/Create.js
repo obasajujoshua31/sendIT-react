@@ -4,8 +4,9 @@ import { withRouter } from "react-router-dom";
 import validateCreateForm, { isValid } from "../../validations/createValidator";
 import registerUser from "../../actions/user/signup";
 import { signUpSuccess } from "../../types/types";
+import { toast } from "react-toastify";
 
-class CreateAccount extends Component {
+export class CreateAccount extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -29,7 +30,7 @@ class CreateAccount extends Component {
   handleChange(e) {
     const { name, value } = e.target;
     this.setState({ formErrors: validateCreateForm(e, this.state) });
-    this.setState({ [name]: value }, () => console.log(this.state));
+    this.setState({ [name]: value });
     if (!isValid(this.state)) {
       this.setState({ isDeactivated: true });
     } else {
@@ -55,6 +56,7 @@ class CreateAccount extends Component {
   UNSAFE_componentWillReceiveProps(nextProps) {
     if (nextProps.signUpStatus === signUpSuccess) {
       this.props.history.push("/view-orders/");
+      toast.success("Welcome to SendIT");
     }
   }
 
@@ -75,7 +77,7 @@ class CreateAccount extends Component {
             <form onSubmit={this.handleSubmit} noValidate>
               <h2>Create Account</h2>
 
-              <div className="form-inline">
+              <div className="form-oneline">
                 <div className="form-group">
                   <label htmlFor="firstName">First Name</label>
                   <input
@@ -174,14 +176,14 @@ class CreateAccount extends Component {
     );
   }
 }
-const mapStateToProps = ({ users }) => {
+export const mapStateToProps = ({ users }) => {
   return {
     signUpStatus: users.signUpStatus,
     errorMsg: users.errorMsg
   };
 };
 
-const mapDispatchToProps = dispatch => {
+export const mapDispatchToProps = dispatch => {
   return {
     signUp: user => dispatch(registerUser(user))
   };
