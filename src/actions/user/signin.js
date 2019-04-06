@@ -3,12 +3,12 @@ import axios from "axios";
 import { signInSuccess, signInFailure } from "../../types/types";
 import { setSignInState, setSignInError } from "../setState";
 
-const baseUrl = "http://localhost:5500/api/v1/auth/login";
+import { baseUrl } from "../../helpers/constants";
 
 const signUserIn = user => dispatch => {
   const { email, password } = user;
   return axios
-    .post(baseUrl, {
+    .post(`${baseUrl}/auth/login`, {
       email,
       password
     })

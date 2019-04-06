@@ -2,13 +2,12 @@ import axios from "axios";
 
 import { viewOrders, signInFailure, signInSuccess } from "../../types/types";
 import { setSignInState } from "../setState";
-
-const baseUrl = "http://localhost:5500/api/v1/users/parcels";
+import { baseUrl } from "../../helpers/constants";
 
 const loadUserParcels = history => dispatch => {
   const token = window.localStorage.getItem("token");
   return axios
-    .get(baseUrl, {
+    .get(`${baseUrl}/users/parcels`, {
       headers: {
         Authorization: token
       }

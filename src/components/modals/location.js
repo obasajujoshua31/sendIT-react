@@ -2,12 +2,10 @@ import React, { Component } from "react";
 import ReactModal from "react-modal";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import Spinner from "react-spinkit";
+import Spinner from "react-md-spinner";
 import editParcelLocation from "../../actions/parcels/admin/location";
 
-ReactModal.setAppElement("#app");
-
-class changeLocation extends Component {
+export class ChangeLocation extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -22,10 +20,16 @@ class changeLocation extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
+  componentWillMount() {
+    if (process.env.NODE_ENV !== "test") {
+      ReactModal.setAppElement("#app");
+    }
+  }
+
   changePresentLocation(e) {
     e.preventDefault();
     if (
-      this.state.formError.length ||
+      this.state.formError ||
       this.props.presentLocation === this.state.presentLocation
     ) {
       return null;
@@ -34,28 +38,29 @@ class changeLocation extends Component {
   }
 
   handleChange(e) {
-    if (!e.target.value) {
-      this.setState({ formError: "Destination cannot be empty " });
+    if (!e.target.value.trim()) {
+      return this.setState({ formError: "Present Location cannot be empty" });
     }
     this.setState({ formError: "" });
     this.setState({ presentLocation: e.target.value });
   }
+
   handleCloseModal() {
     this.setState({ showLocationModal: false });
   }
-  componentDidMount() {
+
+  componentDidMount = () => {
     this.setState({ presentLocation: this.props.presentLocation });
+  };
+
+  componentDidUpdate(prevProps) {
+    if (this.props !== prevProps) {
+      if (this.props.parcelStatus) {
+        this.props.history.push("/admin-dashboard");
+      }
+    }
   }
 
-  static getDerivedStateFromProps(nextProps, prevState) {
-    if (nextProps.parcelStatus !== prevState.parcelStatus) {
-      if (nextProps.parcelStatus) {
-        nextProps.history.push("/admin-dashboard");
-      }
-      return null;
-    }
-    return null;
-  }
   render() {
     const { show, closeChangeLocation } = this.props;
     return (
@@ -96,17 +101,19 @@ class changeLocation extends Component {
   }
 }
 
-const mapStateToProps = ({ parcels }) => ({
+export const mapStateToProps = ({ parcels }) => ({
   parcelStatus: parcels.parcelStatus
 });
-const mapDispatchToProps = dispatch => ({
+
+export const mapDispatchToProps = dispatch => ({
   editLocation: (id, presentLocation) =>
     dispatch(editParcelLocation(id, presentLocation))
 });
+
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(withRouter(changeLocation));
+)(withRouter(ChangeLocation));
 
 const spanStyle = {
   fontSize: "1.8em",

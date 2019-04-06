@@ -1,0 +1,211 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test for User AdminViewOrders should call render parcels 1`] = `
+<Fragment>
+  <div
+    className="view-order-container"
+  >
+    <h1>
+      All Available Orders
+    </h1>
+    <table
+      align="center"
+      className="table"
+    >
+      <thead>
+        <tr>
+          <td>
+            Parcel Id
+          </td>
+          <td>
+            Parcel Name
+          </td>
+          <td>
+            Pick Up Location
+          </td>
+          <td>
+            Destination
+          </td>
+          <td>
+            Sent On
+          </td>
+          <td>
+            Status
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <withRouter(Order)
+          onHandleViewOrder={[Function]}
+          parcel={
+            Object {
+              "parcel": Object {
+                "id": "1",
+                "status": "PLACED",
+              },
+            }
+          }
+        />
+        <withRouter(Order)
+          onHandleViewOrder={[Function]}
+          parcel={
+            Object {
+              "parcel": Object {
+                "id": "2",
+                "status": "DELIVERED",
+              },
+            }
+          }
+        />
+        <withRouter(Order)
+          onHandleViewOrder={[Function]}
+          parcel={
+            Object {
+              "parcel": Object {
+                "id": "3",
+                "status": "TRANSITING",
+              },
+            }
+          }
+        />
+        <withRouter(Order)
+          onHandleViewOrder={[Function]}
+          parcel={
+            Object {
+              "parcel": Object {
+                "id": "4",
+                "status": "CANCELLED",
+              },
+            }
+          }
+        />
+      </tbody>
+    </table>
+  </div>
+</Fragment>
+`;
+
+exports[`Test for User AdminViewOrders should render AdminViewOrders component 1`] = `
+<Fragment>
+  <div
+    className="view-order-container"
+  >
+    <h1>
+      All Available Orders
+    </h1>
+    <table
+      align="center"
+      className="table"
+    >
+      <thead>
+        <tr>
+          <td>
+            Parcel Id
+          </td>
+          <td>
+            Parcel Name
+          </td>
+          <td>
+            Pick Up Location
+          </td>
+          <td>
+            Destination
+          </td>
+          <td>
+            Sent On
+          </td>
+          <td>
+            Status
+          </td>
+        </tr>
+      </thead>
+      <tbody />
+    </table>
+  </div>
+</Fragment>
+`;
+
+exports[`Test for User AdminViewOrders should render view orders 1`] = `
+<Fragment>
+  <div
+    className="view-order-container"
+  >
+    <h1>
+      All Available Orders
+    </h1>
+    <table
+      align="center"
+      className="table"
+    >
+      <thead>
+        <tr>
+          <td>
+            Parcel Id
+          </td>
+          <td>
+            Parcel Name
+          </td>
+          <td>
+            Pick Up Location
+          </td>
+          <td>
+            Destination
+          </td>
+          <td>
+            Sent On
+          </td>
+          <td>
+            Status
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <withRouter(Order)
+          onHandleViewOrder={[Function]}
+          parcel={
+            Object {
+              "parcel": Object {
+                "id": "1",
+                "status": "PLACED",
+              },
+            }
+          }
+        />
+        <withRouter(Order)
+          onHandleViewOrder={[Function]}
+          parcel={
+            Object {
+              "parcel": Object {
+                "id": "2",
+                "status": "DELIVERED",
+              },
+            }
+          }
+        />
+        <withRouter(Order)
+          onHandleViewOrder={[Function]}
+          parcel={
+            Object {
+              "parcel": Object {
+                "id": "3",
+                "status": "TRANSITING",
+              },
+            }
+          }
+        />
+        <withRouter(Order)
+          onHandleViewOrder={[Function]}
+          parcel={
+            Object {
+              "parcel": Object {
+                "id": "4",
+                "status": "CANCELLED",
+              },
+            }
+          }
+        />
+      </tbody>
+    </table>
+  </div>
+</Fragment>
+`;

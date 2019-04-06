@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import loadUserParcels from "../../actions/parcels/admin/getParcels";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import Spinner from "react-spinkit";
+import Spinner from "react-md-spinner";
 import {
   signInFailure,
   signUpFailure,
@@ -12,28 +12,35 @@ import {
 import Order from "../dashboard/order";
 import EditModal from "../../components/modals/edit";
 import ReactModal from "react-modal";
-ReactModal.setAppElement("#app");
-ReactModal.defaultStyles.overlay.backgroundColor = "cornsilk";
 
-class AdminViewOrders extends Component {
+export class AdminViewOrders extends Component {
   constructor(props) {
     super(props);
     this.state = {
       parcels: [],
       showModal: false,
-      parcelId: ""
+      parcelId: "",
+      isLoading: true
     };
+
     this.onHandleViewOrder = this.onHandleViewOrder.bind(this);
     this.closeModal = this.closeModal.bind(this);
+  }
+
+  componentWillMount() {
+    if (process.env.NODE_ENV !== "test") {
+      ReactModal.setAppElement("#app");
+      ReactModal.defaultStyles.overlay.backgroundColor = "cornsilk";
+    }
   }
 
   onHandleViewOrder(parcelId) {
     this.setState({
       showModal: true,
-      parcelId,
-      authStatus: signInSuccess || signUpSuccess
+      parcelId
     });
   }
+
   closeModal() {
     this.setState({ showModal: false });
   }
@@ -41,27 +48,34 @@ class AdminViewOrders extends Component {
     this.props.loadParcels();
   }
 
-  static getDerivedStateFromProps(nextProps, prevState) {
-    if (nextProps.authStatus !== prevState.authStatus) {
-      if (
-        nextProps.authStatus === signInFailure ||
-        nextProps.authStatus === signUpFailure
-      ) {
-        nextProps.history.push("/login");
-      }
-      return null;
-    }
-    return null;
-  }
   componentDidUpdate(prevProps) {
-    if (prevProps !== this.props && this.props.userParcels.data) {
-      this.setState({ parcels: this.props.userParcels.data });
+    if (prevProps !== this.props) {
+      if (this.props.userParcels.data) {
+        this.setState({ isLoading: false });
+        this.setState({ parcels: this.props.userParcels.data });
+      }
+      if (
+        this.props.authStatus === signInFailure ||
+        this.props.authStatus === signUpFailure
+      ) {
+        this.props.history.push("/login");
+      }
     }
   }
+
   render() {
-    if (!this.state.parcels.length) {
-      return <Spinner name="three-bounce" color="orange" />;
+    if (this.state.isLoading) {
+      return (
+        <div className="container">
+          <div className="table-container">
+            <div className="container-not-found">
+              <Spinner />
+            </div>
+          </div>
+        </div>
+      );
     }
+
     return (
       <React.Fragment>
         <div className="view-order-container">
@@ -105,11 +119,11 @@ class AdminViewOrders extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   loadParcels: () => dispatch(loadUserParcels())
 });
 
-const mapStateToProps = ({ parcels, users }) => ({
+export const mapStateToProps = ({ parcels, users }) => ({
   userParcels: parcels.parcels,
   authStatus: users.singInStatus,
   role: users.role

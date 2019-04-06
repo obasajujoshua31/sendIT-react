@@ -7,13 +7,13 @@ import {
 } from "../../../types/types";
 import { setSignInState } from "../../setState";
 
-const baseUrl = "http://localhost:5500/api/v1/parcels";
+import { baseUrl } from "../../../helpers/constants";
 
 const changeStatus = (parcelId, status) => dispatch => {
   const token = window.localStorage.getItem("token");
   return axios
     .put(
-      `${baseUrl}/${parcelId}/status`,
+      `${baseUrl}/parcels/${parcelId}/status`,
       {
         status
       },

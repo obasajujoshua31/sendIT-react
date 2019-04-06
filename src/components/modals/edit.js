@@ -3,15 +3,13 @@ import ReactModal from "react-modal";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import getOneParcel from "../../actions/parcels/getOneParcel";
-import Spinner from "react-spinkit";
+import Spinner from "react-md-spinner";
 import EditDestinationModal from "./editDestination";
 import CancelParcelOrder from "./cancelOrder";
 import ChangeLocation from "./location";
 import UpdateStatus from "./status";
 
-ReactModal.setAppElement("#app");
-
-class Modal extends Component {
+export class Modal extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -23,6 +21,12 @@ class Modal extends Component {
     this.closeParcelModal = this.closeParcelModal.bind(this);
     this.showCancelOrder = this.showCancelOrder.bind(this);
     this.closeCancelModal = this.closeCancelModal.bind(this);
+  }
+
+  componentWillMount() {
+    if (process.env.NODE_ENV !== "test") {
+      ReactModal.setAppElement("#app");
+    }
   }
 
   editParcel() {
@@ -236,11 +240,11 @@ const modalBodyContainer = {
   alignItem: "center"
 };
 
-const mapStateToProps = ({ parcels }) => ({
+export const mapStateToProps = ({ parcels }) => ({
   userParcel: parcels.parcel
 });
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   loadOneParcel: (parcelId, role) => dispatch(getOneParcel(parcelId, role))
 });
 

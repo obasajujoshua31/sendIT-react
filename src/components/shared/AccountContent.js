@@ -7,7 +7,7 @@ export class AccountContent extends Component {
     this.handleClick = this.handleClick.bind(this);
   }
   handleClick() {
-    this.props.history.push("view-orders");
+    this.props.history.push("create-order");
   }
   render() {
     return (

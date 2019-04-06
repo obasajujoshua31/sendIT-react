@@ -4,9 +4,7 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import updateStatus from "../../actions/parcels/admin/status";
 
-ReactModal.setAppElement("#app");
-
-class changeStatus extends Component {
+export class ChangeStatus extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -22,24 +20,26 @@ class changeStatus extends Component {
     e.preventDefault();
     this.props.changeParcelStatus(this.props.parcelId, this.state.status);
   }
-
+  componentWillMount() {
+    if (process.env.NODE_ENV !== "test") {
+      ReactModal.setAppElement("#app");
+    }
+  }
   handleChange(e) {
     const { name, value } = e.target;
     this.setState({ [name]: value });
   }
 
-  componentDidMount() {
+  componentDidMount = () => {
     this.setState({ status: this.props.status });
-  }
+  };
 
-  static getDerivedStateFromProps(nextProps, prevState) {
-    if (nextProps.parcelStatus !== prevState.parcelStatus) {
-      if (nextProps.parcelStatus) {
-        nextProps.history.push("/admin-dashboard");
+  componentDidUpdate(prevProps) {
+    if (this.props !== prevProps) {
+      if (this.props.parcelStatus) {
+        this.props.history.push("/admin-dashboard");
       }
-      return null;
     }
-    return null;
   }
 
   render() {
@@ -85,16 +85,16 @@ class changeStatus extends Component {
   }
 }
 
-const mapStateToProps = ({ parcels }) => ({
+export const mapStateToProps = ({ parcels }) => ({
   parcelStatus: parcels.parcelStatus
 });
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   changeParcelStatus: (id, status) => dispatch(updateStatus(id, status))
 });
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(withRouter(changeStatus));
+)(withRouter(ChangeStatus));
 
 const spanStyle = {
   fontSize: "1.8em",

@@ -2,7 +2,7 @@ import React from "react";
 import { shallow, mount } from "enzyme";
 import sinon from "sinon";
 import { CreateAccount, mapDispatchToProps, mapStateToProps } from "../Create";
-import { signUpSuccess } from "../../../types/types";
+import { signUpSuccess, signInFailure } from "../../../types/types";
 
 const props = {
   signUp: jest.fn(),
@@ -27,30 +27,25 @@ const mockStore = {
   }
 };
 
+const mockSubmit = {
+  preventDefault: jest.fn()
+};
+
+const validState = {
+  formErrors: {
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    confirmPassword: ""
+  }
+};
+
 const wrapper = shallow(<CreateAccount {...props} />);
 
 describe(" <CreateAccount> ", () => {
   it("should render CreateAccount Component", () => {
     expect(wrapper).toMatchSnapshot();
-  });
-
-  it("should contain 8 <div> tags", () => {
-    expect(wrapper.find("div").length).toEqual(8);
-  });
-  it("should contain 1 <form> tag", () => {
-    expect(wrapper.find("form").length).toEqual(1);
-  });
-  it("should contain 1 <h2> tag", () => {
-    expect(wrapper.find("h2").length).toEqual(1);
-  });
-  it("should contain 5 <label> tags", () => {
-    expect(wrapper.find("label").length).toEqual(5);
-  });
-  it("should contain 5 <input> tags", () => {
-    expect(wrapper.find("input").length).toEqual(5);
-  });
-  it("should contain 1 <button> tag", () => {
-    expect(wrapper.find("button").length).toEqual(1);
   });
   it("should set the firstName field to test", () => {
     wrapper
@@ -65,19 +60,28 @@ describe(" <CreateAccount> ", () => {
     expect(wrapper.instance().state.firstName).toEqual("test");
   });
 
-  // it("should set isDeactivated to false", () => {
-  //   wrapper
-  //     .find("input")
-  //     .at(0)
-  //     .simulate("change", {
-  //       target: {
-  //         value: "",
-  //         name: "firstName"
-  //       }
-  //     });
-  //   expect(wrapper.instance().state.firstName).toEqual("");
-  //   // expect(wrapper.instance().state.isDeactivated).toEqual(true)
-  // });
+  it("should set isDeactivated to false", () => {
+    wrapper.setState({
+      formErrors: validState.formErrors,
+      firstName: "dkkdkd",
+      lastName: "lldldld",
+      email: "me@example.com",
+      password: "000000",
+      confirmPassword: "000000"
+    });
+
+    wrapper
+      .find("input")
+      .at(0)
+      .simulate("change", {
+        target: {
+          value: "dkkdkkd",
+          name: "firstName"
+        }
+      });
+    // console.log(wrapper.instance().state)
+    expect(wrapper.instance().state.isDeactivated).toEqual(false);
+  });
 
   it("should call dispatch action", () => {
     const dispatchSpy = sinon.spy();
@@ -92,9 +96,18 @@ describe(" <CreateAccount> ", () => {
   });
 
   it("should call history.push", () => {
-    const addedProps = { ...props, signUpStatus: signUpSuccess };
-    const alteredWrapper = shallow(<CreateAccount {...addedProps} />);
-    expect(alteredWrapper.instance().props.history.push).toHaveBeenCalled();
+    wrapper.setProps({
+      signUpStatus: signUpSuccess
+    });
+
+    expect(wrapper.instance().props.history.push).toHaveBeenCalled();
+  });
+
+  it("should render when props changes but it is not sign up success", () => {
+    wrapper.setProps({
+      signUpStatus: signInFailure
+    });
+    expect(wrapper).toMatchSnapshot();
   });
 
   it("should call submit", () => {
@@ -108,6 +121,35 @@ describe(" <CreateAccount> ", () => {
     expect(prevented).toEqual(true);
   });
 
+  it("should re render when the form is invalid when the submit button is clicked", () => {
+    const submitSpy = jest.spyOn(wrapper.instance(), "handleSubmit");
+    wrapper.setState({
+      firstName: "",
+      lastName: ""
+    });
+    submitSpy(mockSubmit);
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it("should re render when there is error in the form", () => {
+    wrapper.setState({
+      formErrors: {
+        password: "kdkdkddkkd",
+        confirmPassword: "llld",
+        firstName: "kdkdkkd",
+        lastName: "kdkdkkd",
+        email: "lldldlld"
+      }
+    });
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it("should re render when there is error in the form", () => {
+    wrapper.setProps({
+      errorMsg: "dkkdkdkkk"
+    });
+    expect(wrapper).toMatchSnapshot();
+  });
   it("should call props.signup", () => {
     let prevented = false;
     wrapper.setState({
@@ -124,5 +166,11 @@ describe(" <CreateAccount> ", () => {
       }
     });
     expect(wrapper.instance().props.signUp).toHaveBeenCalled();
+  });
+  it("should call history.push", () => {
+    wrapper.setProps({
+      signUpStatus: signUpSuccess
+    });
+    expect(wrapper.instance().props.history.push).toHaveBeenCalled();
   });
 });

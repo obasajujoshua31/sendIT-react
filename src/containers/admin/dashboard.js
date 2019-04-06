@@ -1,48 +1,57 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
+import Spinner from "react-md-spinner";
 import loadUserParcels from "../../actions/parcels/admin/getParcels";
 import { connect } from "react-redux";
 import organiseOrders from "../../helpers/organise";
 
-import {
-  signInFailure,
-  signUpFailure,
-  signInSuccess,
-  signUpSuccess,
-  isLoggedOut
-} from "../../types/types";
+import { signInFailure, signUpFailure, isLoggedOut } from "../../types/types";
 
-class AdminDashboard extends Component {
+export class AdminDashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
       authStatus: signInFailure,
-      role: false
+      role: false,
+      isLoading: true
     };
   }
   componentDidMount() {
     this.props.loadParcels();
   }
 
-  static getDerivedStateFromProps(nextProps, prevState) {
-    if (nextProps.authStatus !== prevState.authStatus) {
-      if (
-        nextProps.authStatus === signInFailure ||
-        nextProps.authStatus === signUpFailure ||
-        nextProps.authStatus == isLoggedOut
-      ) {
-        nextProps.history.push("/login");
-      }
-      return null;
-    }
-    return null;
-  }
   componentDidUpdate(prevProps) {
-    if (prevProps !== this.props && this.props.userParcels.data) {
-      this.setState({ parcels: this.props.userParcels.data });
+    if (this.props !== prevProps) {
+      if (this.props.parcelStatus) {
+        this.props.history.push("/dashboard");
+      }
+      if (this.props.userParcels.data) {
+        this.setState({ isLoading: false });
+        this.setState({ parcels: this.props.userParcels.data });
+      }
+      if (
+        this.props.authStatus === signInFailure ||
+        this.props.authStatus === signUpFailure ||
+        this.props.authStatus === isLoggedOut
+      ) {
+        this.props.history.push("/login");
+      }
     }
   }
+
   render() {
+    if (this.state.isLoading) {
+      return (
+        <div className="container">
+          <div className="table-container">
+            <div className="container-not-found">
+              <Spinner />
+            </div>
+          </div>
+        </div>
+      );
+    }
+
     let placed = 0;
     let delivered = 0;
     let cancelled = 0;
@@ -87,11 +96,11 @@ class AdminDashboard extends Component {
     );
   }
 }
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   loadParcels: () => dispatch(loadUserParcels())
 });
 
-const mapStateToProps = ({ parcels, users }) => ({
+export const mapStateToProps = ({ parcels, users }) => ({
   userParcels: parcels.parcels,
   authStatus: users.singInStatus
 });

@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import logOutUser from "../../actions/user/signout";
 import { isLoggedOut, signInSuccess, signUpSuccess } from "../../types/types";
 
-
 const GuestLink = (
   <React.Fragment>
     <li className="nav-item">
@@ -99,7 +98,7 @@ export const Navbar = ({ logout, singInStatus, history, role }) => {
       </button>
       <div className="collapse navbar-collapse" id="navbarNavDropdown">
         <ul className="navbar-nav">
-          {singInStatus === (signInSuccess || signUpSuccess)
+          {singInStatus === signInSuccess || singInStatus === signUpSuccess
             ? singInUserLink
             : GuestLink}
         </ul>

@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import signUserIn from "../../actions/user/signin";
 import { signInSuccess, signInFailure } from "../../types/types";
 import { withRouter } from "react-router-dom";
-// import Spinner from "react-spinkit";
+import Spinner from "react-md-spinner";
 import isValidLoginForm from "../../validations/loginValidator";
 
 export class Login extends Component {
@@ -22,37 +22,54 @@ export class Login extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.singInStatus === signInSuccess) {
-      if (nextProps.role) {
-        this.props.history.push("/admin-dashboard/");
-      } else {
-        this.props.history.push("/view-orders/");
+  componentDidUpdate(prevProps) {
+    if (prevProps !== this.props) {
+      if (this.props.singInStatus === signInSuccess) {
+        if (this.props.role) {
+          this.props.history.push("/admin-dashboard/");
+        } else {
+          this.props.history.push("/view-orders/");
+        }
       }
-      toast.success("You are successfully logged in");
-    }
-    if (nextProps.errorMessage) {
-      toast.error(nextProps.errorMessage);
+      if (this.props.errorMessage) {
+        this.setState({ isLoading: false });
+      }
     }
   }
+
   handleChange(e) {
     const { name, value } = e.target;
     this.setState({ [name]: value });
   }
   handleSubmit(e) {
     e.preventDefault();
+    this.setState({ isLoading: true });
     const { email, password } = this.state;
     if (!isValidLoginForm(this.state)) {
+      this.setState({ isLoading: false });
       return this.setState({
         formErrors: "Invalid Credentials!"
       });
     }
     // this.ShowSpinner();
     this.setState({ email: "", password: "" });
+    this.setState({ isLoading: true });
     this.props.signIn({ email, password });
   }
 
   render() {
+    if (this.state.isLoading) {
+      return (
+        <div className="container">
+          <div className="table-container">
+            <div className="container-not-found">
+              <Spinner />
+            </div>
+          </div>
+        </div>
+      );
+    }
+
     const { email, password, isShowSpinner, formErrors } = this.state;
     // const isflyingSpinner = <Spinner name="three-bounce" color="orange" />;
 

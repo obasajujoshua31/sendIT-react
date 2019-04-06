@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test for Parcel Order should render Dashboard component 1`] = `
+<Fragment>
+  <tr
+    onClick={[Function]}
+  >
+    <th
+      scope="row"
+    >
+      #
+    </th>
+    <td />
+    <td />
+    <td />
+    <td />
+    <td />
+  </tr>
+</Fragment>
+`;

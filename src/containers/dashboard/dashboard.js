@@ -2,26 +2,46 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import { withRouter } from "react-router-dom";
+import Spinner from "react-md-spinner";
 import loadUserParcels from "../../actions/parcels/getParcels";
 import { signInFailure, signUpFailure } from "../../types/types";
 import organiseOrders from "../../helpers/organise";
 
-class Dashboard extends Component {
+export class Dashboard extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      isLoading: true
+    };
   }
   componentDidMount() {
     this.props.loadParcels();
   }
-  componentWillReceiveProps(nextProps) {
-    if (
-      nextProps.authStatus === signInFailure ||
-      nextProps.authStatus === signUpFailure
-    ) {
-      this.props.history.push("/login");
+  componentDidUpdate(prevProps) {
+    if (prevProps !== this.props) {
+      if (
+        this.props.authStatus === signInFailure ||
+        this.props.authStatus === signUpFailure
+      ) {
+        this.props.history.push("/login");
+      }
+      this.setState({isLoading: false})
     }
   }
+
   render() {
+    if (this.state.isLoading) {
+      return (
+        <div className="container">
+          <div className="table-container">
+            <div className="container-not-found">
+              <Spinner />
+            </div>
+          </div>
+        </div>
+      );
+    }
+
     let placed = 0;
     let delivered = 0;
     let cancelled = 0;
@@ -68,11 +88,11 @@ class Dashboard extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
   loadParcels: () => dispatch(loadUserParcels())
 });
 
-const mapStateToProps = ({ parcels, users }) => ({
+export const mapStateToProps = ({ parcels, users }) => ({
   userParcels: parcels.parcels,
   authStatus: users.singInStatus
 });

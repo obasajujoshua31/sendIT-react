@@ -1,0 +1,340 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Edit Modal Test should render Edit Modal 1`] = `
+<MDSpinner
+  color="orange"
+  color1="rgb(66, 165, 245)"
+  color2="rgb(239, 83, 80)"
+  color3="rgb(253, 216, 53)"
+  color4="rgb(76, 175, 80)"
+  duration={1333}
+  name="three-bounce"
+  size={28}
+/>
+`;
+
+exports[`Edit Modal Test should render modal when parcel is in the state 1`] = `
+<div>
+  <Modal
+    ariaHideApp={true}
+    bodyOpenClassName="ReactModal__Body--open"
+    className="Modal"
+    closeTimeoutMS={0}
+    contentLabel="Modal #1 Global Style Override Example"
+    isOpen={true}
+    onRequestClose={[MockFunction]}
+    overlayClassName="Overlay"
+    parentSelector={[Function]}
+    portalClassName="ReactModalPortal"
+    role="dialog"
+    shouldCloseOnEsc={true}
+    shouldCloseOnOverlayClick={true}
+    shouldFocusAfterRender={true}
+    shouldReturnFocusAfterClose={true}
+  >
+    <div
+      style={
+        Object {
+          "alignItem": "center",
+          "backgroundColor": "#806B75",
+          "display": "flex",
+          "justifyContent": "center",
+          "padding": 15,
+          "position": "relative",
+        }
+      }
+    >
+      <span
+        style={
+          Object {
+            "bottom": 5,
+            "color": "white",
+            "cursor": "pointer",
+            "fontSize": "1.8em",
+            "padding": 5,
+            "position": "absolute",
+            "right": 5,
+          }
+        }
+      >
+        <i
+          className="far fa-times-circle"
+          onClick={[MockFunction]}
+        />
+      </span>
+      <h3
+        style={
+          Object {
+            "color": "white",
+            "fontSize": "1.4rem",
+            "fontWeight": "bold",
+          }
+        }
+      >
+        Order
+      </h3>
+    </div>
+    <div
+      style={
+        Object {
+          "alignItem": "center",
+          "display": "flex",
+          "justifyContent": "center",
+          "maxWidth": "100%",
+          "padding": "10px",
+        }
+      }
+    >
+      <div
+        style={
+          Object {
+            "border": "2px solid rgba(0, 0, 0, 0.3)",
+            "borderRadius": 10,
+            "height": "300px",
+            "marginTop": 30,
+            "overflow": "scroll",
+            "padding": 10,
+            "width": "100%",
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "display": "flex",
+              "padding": 5,
+            }
+          }
+        >
+          <label
+            className="item-label"
+          >
+            Name:
+          </label>
+          <span
+            className="item-span"
+          >
+            phone
+          </span>
+        </div>
+        <hr />
+        <div
+          style={
+            Object {
+              "display": "flex",
+              "padding": 5,
+            }
+          }
+        >
+          <label
+            className="item-label"
+          >
+            Pick Up Location:
+          </label>
+          <span
+            className="item-span"
+          >
+            dkld
+          </span>
+        </div>
+        <hr />
+        <div
+          style={
+            Object {
+              "display": "flex",
+              "padding": 5,
+            }
+          }
+        >
+          <label
+            className="item-label"
+          >
+            Destination:
+          </label>
+          <span
+            className="item-span"
+          >
+            dkkdkd
+          </span>
+        </div>
+        <hr />
+        <div
+          style={
+            Object {
+              "display": "flex",
+              "padding": 5,
+            }
+          }
+        >
+          <label
+            className="item-label"
+          >
+            Status: 
+          </label>
+          <span
+            className="item-span"
+          >
+            PLACED
+          </span>
+        </div>
+        <hr />
+        <div
+          style={
+            Object {
+              "display": "flex",
+              "padding": 5,
+            }
+          }
+        >
+          <label
+            className="item-label"
+          >
+            Sent On:
+          </label>
+          <span
+            className="item-span"
+          >
+            slldd
+          </span>
+        </div>
+        <hr />
+        <div
+          style={
+            Object {
+              "display": "flex",
+              "padding": 5,
+            }
+          }
+        >
+          <label
+            className="item-label"
+          >
+            Weight:
+          </label>
+          <span
+            className="item-span"
+          >
+            32  kg
+          </span>
+        </div>
+        <hr />
+        <div
+          style={
+            Object {
+              "display": "flex",
+              "padding": 5,
+            }
+          }
+        >
+          <label
+            className="item-label"
+          >
+            Delivered On:
+          </label>
+          <span
+            className="item-span"
+          >
+            ldlldd
+          </span>
+        </div>
+        <hr />
+        <div
+          style={
+            Object {
+              "display": "flex",
+              "padding": 5,
+            }
+          }
+        >
+          <label
+            className="item-label"
+          >
+            Present Location:
+          </label>
+          <span
+            className="item-span"
+          >
+            dlddld
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#e9e6e6",
+          "display": "flex",
+          "justifyContent": "space-around",
+          "padding": "10px 0px",
+          "width": "100%",
+        }
+      }
+    >
+      <button
+        className="button edit"
+        hidden={false}
+        onClick={
+          [MockFunction] {
+            "calls": Array [
+              Array [],
+            ],
+            "results": Array [
+              Object {
+                "type": "return",
+                "value": undefined,
+              },
+            ],
+          }
+        }
+      >
+        Change Location
+      </button>
+      <button
+        className="button cancel"
+        hidden={false}
+        onClick={
+          [MockFunction] {
+            "calls": Array [
+              Array [],
+            ],
+            "results": Array [
+              Object {
+                "type": "return",
+                "value": undefined,
+              },
+            ],
+          }
+        }
+      >
+        Change Status
+      </button>
+    </div>
+  </Modal>
+</div>
+`;
+
+exports[`Edit Modal Test should render when the role is false 1`] = `
+<MDSpinner
+  color="orange"
+  color1="rgb(66, 165, 245)"
+  color2="rgb(239, 83, 80)"
+  color3="rgb(253, 216, 53)"
+  color4="rgb(76, 175, 80)"
+  duration={1333}
+  name="three-bounce"
+  size={28}
+/>
+`;
+
+exports[`Edit Modal Test should render when the role is true 1`] = `
+<MDSpinner
+  color="orange"
+  color1="rgb(66, 165, 245)"
+  color2="rgb(239, 83, 80)"
+  color3="rgb(253, 216, 53)"
+  color4="rgb(76, 175, 80)"
+  duration={1333}
+  name="three-bounce"
+  size={28}
+/>
+`;
