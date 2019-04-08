@@ -1,7 +1,13 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const dotenvWebpack = require("dotenv-webpack");
+
 module.exports = {
+  performance: {
+    hints: false,
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000
+  },
   entry: ["babel-polyfill", "./src/index.js"],
 
   output: {
@@ -19,9 +25,18 @@ module.exports = {
       {
         test: /\.css$|.scss$/,
         use: ["style-loader", "css-loader", "sass-loader"]
+      },
+      {
+        test: /\.(png|jpg|gif|woff|woff2|eot|jpeg|ttf|otf|svg)$/,
+        use: [
+          {
+            loader: "file-loader"
+          }
+        ]
       }
     ]
   },
+
   devServer: {
     contentBase: path.join(__dirname, "/"),
     port: 8080,

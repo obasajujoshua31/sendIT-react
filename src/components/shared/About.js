@@ -1,4 +1,8 @@
 import React, { Fragment } from "react";
+import image1 from "../../assets/rawpixel-799527-unsplash.jpg";
+import image2 from "../../assets/images.jpeg";
+import image3 from "../../assets/quickorder-301139-unsplash.jpg";
+import image4 from "../../assets/rawpixel-783423-unsplash.jpg";
 
 const About = () => {
   return (
@@ -18,12 +22,12 @@ const About = () => {
         </div>
         <div className="about-us-body">
           <div className="image-container image-1">
-            <img src="/src/assets/rawpixel-799527-unsplash.jpg" />
+            <img src={image1} />
             <h3>History of SendIT</h3>
             <p>Send It began some 15 years ago at Banana Island, Lagos.</p>
           </div>
           <div className="image-container image-2">
-            <img src="/src/assets/images.jpeg" />
+            <img src={image2} />
             <h3>Motivation</h3>
             <p>
               Due to several complains regarding existing Courier Services,
@@ -31,12 +35,12 @@ const About = () => {
             </p>
           </div>
           <div className="image-container image-3">
-            <img src="/src/assets/quickorder-301139-unsplash.jpg" />
+            <img src={image3} />
             <h3>Vision</h3>
             <p>To be among the top leading Courier Services in Africa</p>
           </div>
           <div className="image-container image-3">
-            <img src="/src/assets/rawpixel-783423-unsplash.jpg" />
+            <img src={image4} />
             <h3>Mission</h3>
             <p>
               By Prompt Delivery of parcels to various destination with the
