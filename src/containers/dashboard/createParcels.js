@@ -26,7 +26,8 @@ export class CreateOrder extends Component {
         pickUpLocation: "",
         weight: ""
       },
-      isLoading: true
+      isLoading: true,
+      parcels: []
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -44,7 +45,9 @@ export class CreateOrder extends Component {
       ) {
         this.props.history.push("/login");
       }
-      this.setState({ isLoading: false });
+      if (this.props.parcels) {
+        this.setState({ isLoading: false });
+      }
       if (this.props.createdStatus) {
         this.props.history.push("view-orders");
       }
@@ -194,7 +197,8 @@ export const mapDispatchToProps = dispatch => ({
 
 export const mapStateToProps = ({ users, parcels }) => ({
   authStatus: users.singInStatus,
-  createdStatus: parcels.parcelStatus
+  createdStatus: parcels.parcelStatus,
+  parcels: parcels.parcels
 });
 
 export default connect(

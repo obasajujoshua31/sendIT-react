@@ -9,21 +9,20 @@ import {
 export const setSignInState = (signInState, user, role, error) => dispatch => {
   switch (signInState) {
     case signInSuccess:
-      dispatch({
+      return dispatch({
         type: signInSuccess,
         errorMessage: "",
         user,
         role
       });
-      break;
     case signInFailure:
-      dispatch({
+      return dispatch({
         type: signInFailure,
         errorMessage: error
       });
 
     case isLoggedOut:
-      dispatch({
+      return dispatch({
         type: isLoggedOut
       });
   }
@@ -40,7 +39,7 @@ export const setSignUpState = (signUpState, user, error) => dispatch => {
       break;
 
     case signUpFailure:
-      dispatch({
+      return dispatch({
         type: signUpFailure,
         errorMsg: error
       });

@@ -25,9 +25,9 @@ export class AdminDashboard extends Component {
       if (this.props.parcelStatus) {
         this.props.history.push("/dashboard");
       }
-      if (this.props.userParcels.data) {
+      if (this.props.userParcels) {
         this.setState({ isLoading: false });
-        this.setState({ parcels: this.props.userParcels.data });
+        this.setState({ parcels: this.props.userParcels });
       }
       if (
         this.props.authStatus === signInFailure ||

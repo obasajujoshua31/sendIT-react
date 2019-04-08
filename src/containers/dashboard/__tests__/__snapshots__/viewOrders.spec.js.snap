@@ -141,30 +141,112 @@ exports[`Test for User ViewOrders should render ViewOrders component 1`] = `
 `;
 
 exports[`Test for User ViewOrders should render view orders 1`] = `
-<div
-  className="container"
->
+<Fragment>
   <div
-    className="table-container"
+    className="container"
   >
     <div
-      className="container-not-found"
+      className="table-container"
     >
-      <h1>
-        You are Welcome to SendIT Courier Services
+      <h1
+        style={
+          Object {
+            "color": "#806B75",
+            "paddingTop": "20px",
+            "textAlign": "center",
+          }
+        }
+      >
+        Your Orders
       </h1>
-      <h1>
-        You don't have any parcels yet
-      </h1>
-      <h1>
-        <Link
-          replace={false}
-          to="/create-order"
+      <table
+        align="center"
+        className="table"
+      >
+        <thead
+          className="thead-dark"
         >
-          Click here to create a Parcel
-        </Link>
-      </h1>
+          <tr>
+            <th
+              scope="col"
+            >
+              Parcel Id
+            </th>
+            <th
+              scope="col"
+            >
+              Parcel Name
+            </th>
+            <th
+              scope="col"
+            >
+              Pick Up Location
+            </th>
+            <th
+              scope="col"
+            >
+              Destination
+            </th>
+            <th
+              scope="col"
+            >
+              Sent On
+            </th>
+            <th
+              scope="col"
+            >
+              Status
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <withRouter(Order)
+            onHandleViewOrder={[Function]}
+            parcel={
+              Object {
+                "parcel": Object {
+                  "id": "1",
+                  "status": "PLACED",
+                },
+              }
+            }
+          />
+          <withRouter(Order)
+            onHandleViewOrder={[Function]}
+            parcel={
+              Object {
+                "parcel": Object {
+                  "id": "2",
+                  "status": "DELIVERED",
+                },
+              }
+            }
+          />
+          <withRouter(Order)
+            onHandleViewOrder={[Function]}
+            parcel={
+              Object {
+                "parcel": Object {
+                  "id": "3",
+                  "status": "TRANSITING",
+                },
+              }
+            }
+          />
+          <withRouter(Order)
+            onHandleViewOrder={[Function]}
+            parcel={
+              Object {
+                "parcel": Object {
+                  "id": "4",
+                  "status": "CANCELLED",
+                },
+              }
+            }
+          />
+        </tbody>
+      </table>
     </div>
   </div>
-</div>
+</Fragment>
 `;
