@@ -33,7 +33,7 @@ exports[`Shared Components Test <About> should render about component 1`] = `
         className="image-container image-1"
       >
         <img
-          src="/src/assets/rawpixel-799527-unsplash.jpg"
+          src=""
         />
         <h3>
           History of SendIT
@@ -46,7 +46,7 @@ exports[`Shared Components Test <About> should render about component 1`] = `
         className="image-container image-2"
       >
         <img
-          src="/src/assets/images.jpeg"
+          src=""
         />
         <h3>
           Motivation
@@ -59,7 +59,7 @@ exports[`Shared Components Test <About> should render about component 1`] = `
         className="image-container image-3"
       >
         <img
-          src="/src/assets/quickorder-301139-unsplash.jpg"
+          src=""
         />
         <h3>
           Vision
@@ -72,7 +72,7 @@ exports[`Shared Components Test <About> should render about component 1`] = `
         className="image-container image-3"
       >
         <img
-          src="/src/assets/rawpixel-783423-unsplash.jpg"
+          src=""
         />
         <h3>
           Mission
