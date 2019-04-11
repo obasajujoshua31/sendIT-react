@@ -50,9 +50,9 @@ export class AdminViewOrders extends Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps !== this.props) {
-      if (this.props.userParcels.data) {
+      if (this.props.userParcels) {
         this.setState({ isLoading: false });
-        this.setState({ parcels: this.props.userParcels.data });
+        this.setState({ parcels: this.props.userParcels });
       }
       if (
         this.props.authStatus === signInFailure ||

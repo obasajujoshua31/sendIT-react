@@ -12,14 +12,11 @@ const props = {
     push: jest.fn()
   },
   authStatus: "",
-  userParcels: {
-    data: {}
-  },
   role: false
 };
 
-const mockParcels = {
-  data: [
+
+  const mockParcels = [
     {
       parcel: {
         id: "1",
@@ -45,7 +42,6 @@ const mockParcels = {
       }
     }
   ]
-};
 
 const mockStore = {
   users: {
@@ -65,6 +61,7 @@ describe("Test for User ViewOrders", () => {
     });
     expect(wrapper).toMatchSnapshot();
   });
+
   it("should dispatch loadparcels", () => {
     const dispatchSpy = sinon.spy();
     const dispatchResult = mapDispatchToProps(dispatchSpy);
@@ -81,9 +78,7 @@ describe("Test for User ViewOrders", () => {
   it("should render view orders", () => {
     const viewOrderWrapper = shallow(<ViewOrders {...props} />);
     viewOrderWrapper.setProps({
-      userParcels: {
-        data: mockParcels
-      }
+      userParcels: mockParcels
     });
     expect(viewOrderWrapper).toMatchSnapshot();
   });
@@ -99,7 +94,7 @@ describe("Test for User ViewOrders", () => {
   it("should call render parcels", () => {
     const viewOrderWrapper = shallow(<ViewOrders {...props} />);
     viewOrderWrapper.setState({
-      parcels: mockParcels.data,
+      parcels: mockParcels,
       showModal: false,
       isLoading: false
     });
@@ -113,7 +108,7 @@ describe("Test for User ViewOrders", () => {
       "onHandleViewOrder"
     );
     viewOrderWrapper.setState({
-      parcels: mockParcels.data
+      parcels: mockParcels
     });
     viewSpy("1");
     expect(viewOrderWrapper.instance().state.showModal).toEqual(true);
@@ -123,7 +118,7 @@ describe("Test for User ViewOrders", () => {
     const viewOrderWrapper = shallow(<ViewOrders {...props} />);
     const viewSpy = jest.spyOn(viewOrderWrapper.instance(), "closeModal");
     viewOrderWrapper.setState({
-      parcels: mockParcels.data
+      parcels: mockParcels
     });
     viewSpy();
     expect(viewOrderWrapper.instance().state.showModal).toEqual(false);

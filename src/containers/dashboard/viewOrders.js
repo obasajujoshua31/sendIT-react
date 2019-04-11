@@ -49,9 +49,9 @@ export class ViewOrders extends Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps !== this.props) {
-      if (this.props.userParcels.data) {
+      if (this.props.userParcels) {
         this.setState({ isLoading: false });
-        this.setState({ parcels: this.props.userParcels.data });
+        this.setState({ parcels: this.props.userParcels });
       }
       if (
         this.props.authStatus === signInFailure ||
@@ -151,7 +151,7 @@ export const mapDispatchToProps = dispatch => ({
 export const mapStateToProps = ({ parcels, users }) => ({
   userParcels: parcels.parcels,
   authStatus: users.singInStatus,
-  role: users.role
+  role: users.role,
 });
 export default connect(
   mapStateToProps,

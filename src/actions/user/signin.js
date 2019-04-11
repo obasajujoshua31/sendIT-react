@@ -17,11 +17,14 @@ const signUserIn = user => dispatch => {
       dispatch(
         setSignInState(signInSuccess, data.user, data.user.isAdmin, null)
       );
+      return Promise.resolve(data.user.isAdmin);
     })
     .catch(error => {
       dispatch(
         setSignInState(signInFailure, null, null, error.response.data.error)
       );
+
+      return Promise.reject(error.response.data.error);
     });
 };
 

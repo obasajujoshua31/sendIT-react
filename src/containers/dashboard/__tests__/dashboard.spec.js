@@ -12,8 +12,7 @@ const props = {
   }
 };
 
-const mockParcels = {
-  data: [
+  const mockParcels =  [
     {
       parcel: {
         status: "PLACED"
@@ -34,8 +33,7 @@ const mockParcels = {
         status: "CANCELLED"
       }
     }
-  ]
-};
+  ];
 
 const mockStore = {
   users: {

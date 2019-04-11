@@ -1,4 +1,4 @@
-const organiseOrders = ({ data }) => {
+const organiseOrders = ( data ) => {
   let placed = 0;
   let delivered = 0;
   let cancelled = 0;

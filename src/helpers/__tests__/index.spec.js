@@ -1,21 +1,19 @@
 import organiseOrders from "../organise";
 
-const mock = {
-  data: [
-    {
-      status: "CANCELLED"
-    },
-    {
-      status: "DELIVERED"
-    },
-    {
-      status: "PLACED"
-    },
-    {
-      status: "TRANSITING"
-    }
-  ]
-};
+const mock = [
+  {
+    status: "CANCELLED"
+  },
+  {
+    status: "DELIVERED"
+  },
+  {
+    status: "PLACED"
+  },
+  {
+    status: "TRANSITING"
+  }
+];
 
 describe("Organise Order Test", () => {
   it("should return placed to be 1", () => {

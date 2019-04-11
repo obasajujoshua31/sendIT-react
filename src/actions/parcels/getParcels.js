@@ -16,7 +16,7 @@ const loadUserParcels = history => dispatch => {
       dispatch(setSignInState(signInSuccess, null, false, null));
       dispatch({
         type: viewOrders,
-        payload: data
+        payload: data.data
       });
     })
     .catch(error => {

@@ -27,12 +27,21 @@ const validateCreateParcelForm = (e, state) => {
 
 export default validateCreateParcelForm;
 
-export const isValid = ({ formErrors, ...rest }) => {
+export const isValid = ({
+  formErrors,
+  parcelName,
+  destination,
+  pickUpLocation,
+  weight,
+  weightMetric
+}) => {
   let valid = true;
   Object.values(formErrors).forEach(
     value => value.length > 0 && (valid = false)
   );
 
-  Object.values(rest).forEach(value => value.length === 0 && (valid = false));
+  [parcelName, destination, pickUpLocation, weight, weightMetric].forEach(
+    value => value.length === 0 && (valid = false)
+  );
   return valid;
 };

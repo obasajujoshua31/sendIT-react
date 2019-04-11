@@ -18,12 +18,12 @@ const loadUserParcels = () => dispatch => {
         Authorization: token
       }
     })
-    .then(({ data }) => {
-      dispatch(setSignInState(signInSuccess, null, true, null));
+    .then(response => {
       dispatch({
         type: viewOrders,
-        payload: data
+        payload: response.data.data
       });
+      dispatch(setSignInState(signInSuccess, null, true, null));
     })
     .catch(error => {
       dispatch(setSignInState(signInFailure, null, error.response.data.error));

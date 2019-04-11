@@ -22,8 +22,7 @@ const props = {
   role: false
 };
 
-const mockParcels = {
-  data: [
+  const mockParcels =  [
     {
       parcel: {
         id: "1",
@@ -49,7 +48,6 @@ const mockParcels = {
       }
     }
   ]
-};
 
 const mockStore = {
   users: {
@@ -84,7 +82,7 @@ describe("Test for User AdminViewOrders", () => {
 
   it("should render view orders", () => {
     wrapper.setState({
-      parcels: mockParcels.data
+      parcels: mockParcels
     });
     expect(wrapper).toMatchSnapshot();
   });
@@ -102,7 +100,7 @@ describe("Test for User AdminViewOrders", () => {
 
   it("should call render parcels", () => {
     wrapper.setState({
-      parcels: mockParcels.data,
+      parcels: mockParcels,
       showModal: false
     });
     expect(wrapper).toMatchSnapshot();
@@ -117,7 +115,7 @@ describe("Test for User AdminViewOrders", () => {
   it("close Modal should set state to false", () => {
     const viewSpy = jest.spyOn(wrapper.instance(), "closeModal");
     wrapper.setState({
-      parcels: mockParcels.data
+      parcels: mockParcels
     });
     viewSpy();
     expect(wrapper.instance().state.showModal).toEqual(false);

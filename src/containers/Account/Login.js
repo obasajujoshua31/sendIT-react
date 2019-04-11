@@ -22,20 +22,10 @@ export class Login extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentDidUpdate(prevProps) {
-    if (prevProps !== this.props) {
-      if (this.props.singInStatus === signInSuccess) {
-        if (this.props.role) {
-          this.props.history.push("/admin-dashboard/");
-        } else {
-          this.props.history.push("/view-orders/");
-        }
-      }
-      if (this.props.errorMessage) {
-        this.setState({ isLoading: false });
-      }
-    }
-  }
+  // componentDidMount() {
+  //   console.log(this.props);
+  //   console.log(this.state);
+  // }
 
   handleChange(e) {
     const { name, value } = e.target;
@@ -54,7 +44,21 @@ export class Login extends Component {
     // this.ShowSpinner();
     this.setState({ email: "", password: "" });
     this.setState({ isLoading: true });
-    this.props.signIn({ email, password });
+    this.props
+      .signIn({ email, password })
+      .then(role => {
+        if (role) {
+          this.props.history.push("/admin-dashboard/");
+        } else {
+          this.props.history.push("/view-orders/");
+        }
+      })
+      .catch(error =>
+        this.setState({
+          isLoading: false,
+          formErrors: error
+        })
+      );
   }
 
   render() {
@@ -78,13 +82,10 @@ export class Login extends Component {
         <div className="account-wrapper">
           <div className="form-wrapper sign-wrapper">
             <form onSubmit={this.handleSubmit} noValidate>
-              {formErrors.length > 0 && (
-                <span className="errorMsg">{formErrors}</span>
-              )}
               {/* {isShowSpinner ? isflyingSpinner : ""} */}
               <h2>Sign In</h2>
-              {this.props.errorMessage.length > 0 && (
-                <span className="errorMsg">{this.props.errorMessage}</span>
+              {this.state.formErrors.length > 0 && (
+                <span className="errorMsg">{this.state.formErrors}</span>
               )}
               <div className="form-group">
                 <label htmlFor="email">Email</label>
